@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "@/styles/globals.scss";
+import "./center-fix.css";
 import ClientScripts from "@/components/ClientScripts";
 
 const spaceGrotesk = Space_Grotesk({
