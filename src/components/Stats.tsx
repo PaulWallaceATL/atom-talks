@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, ReactNode } from 'react';
 import FadeInSection from './reactbits/FadeInSection';
 
 interface StatsProps {
@@ -44,7 +44,7 @@ function StatCard({
   index, 
   isVisible 
 }: { 
-  stat: { value: number; suffix: string; label: string; icon: string; color: string }; 
+  stat: { value: number; suffix: string; label: string; icon: ReactNode; color: string }; 
   index: number; 
   isVisible: boolean;
 }) {
@@ -73,9 +73,10 @@ function StatCard({
               delay: 0.2 + index * 0.1 
             }}
             className="mb-4"
-            style={{ fontSize: '2.5rem' }}
           >
-            {stat.icon}
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block' }}>
+              {stat.icon}
+            </svg>
           </motion.div>
 
           {/* Number */}
@@ -150,28 +151,28 @@ export default function Stats({ dark = true, extraClassList = '' }: StatsProps) 
       value: 24,
       suffix: 'hrs',
       label: 'Deployment Time',
-      icon: '⚡',
+      icon: <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />,
       color: '#667eea',
     },
     {
       value: 53,
       suffix: '+',
       label: 'Emotion Points Detected',
-      icon: '🧠',
+      icon: <><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></>,
       color: '#764ba2',
     },
     {
       value: 85,
       suffix: '%',
       label: 'Support Ticket Reduction',
-      icon: '📉',
+      icon: <><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></>,
       color: '#f093fb',
     },
     {
       value: 99,
       suffix: '%',
       label: 'Uptime Guarantee',
-      icon: '🎯',
+      icon: <><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></>,
       color: '#06b6d4',
     },
   ];
@@ -192,7 +193,10 @@ export default function Stats({ dark = true, extraClassList = '' }: StatsProps) 
               transition={{ duration: 0.6 }}
             >
               <span className="badge-premium mb-4 d-inline-block">
-                📊 By The Numbers
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', marginRight: '0.5rem', verticalAlign: 'text-top' }}>
+                  <line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/>
+                </svg>
+                By The Numbers
               </span>
             </motion.div>
             <h2 

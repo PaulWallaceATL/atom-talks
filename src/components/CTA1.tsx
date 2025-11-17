@@ -42,7 +42,11 @@ export default function CTA1({ dark = true }: CTA1Props) {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <span className="badge-premium mb-6 d-inline-block">
-                  🚀 Get Started Today
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', marginRight: '0.5rem', verticalAlign: 'text-top' }}>
+                    <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  Get Started Today
                 </span>
               </motion.div>
 
@@ -145,17 +149,25 @@ export default function CTA1({ dark = true }: CTA1Props) {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="mt-10 d-flex flex-wrap gap-6 justify-content-center align-items-center"
               >
-                {['🔒 Enterprise Security', '⚡ 24hr Deployment', '💯 99.9% Uptime', '🎯 Zero Engineering'].map((item, i) => (
+                {[
+                  { icon: <><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></>, text: 'Enterprise Security' },
+                  { icon: <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />, text: '24hr Deployment' },
+                  { icon: <><polyline points="20 6 9 17 4 12"/></>, text: '99.9% Uptime' },
+                  { icon: <><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></>, text: 'Zero Engineering' }
+                ].map((item, i) => (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.9 + i * 0.1 }}
-                    className="glass rounded-pill px-5 py-3 text-white fw-medium"
+                    className="glass rounded-pill px-5 py-3 text-white fw-medium d-flex align-items-center gap-2"
                     style={{ fontSize: '0.95rem' }}
                   >
-                    {item}
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                      {item.icon}
+                    </svg>
+                    {item.text}
                   </motion.div>
                 ))}
               </motion.div>

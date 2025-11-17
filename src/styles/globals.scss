@@ -19,3 +19,7 @@ Description: AI Content Writing & Copywriting Landing Page
 @import './centering-fix.scss';
 @import './layout-fixes.scss';
 
+// Import mobile-responsive styles (MUST be last for proper override)
+@import './mobile-responsive.scss';
+@import './mobile-utilities.scss';
+

@@ -70,7 +70,7 @@ export default function Pricing1({ dark = true, extraClassList = '' }: Pricing1P
       
       <div className="container position-relative" style={{ zIndex: 1 }}>
         <FadeInSection>
-          <div className="row justify-content-center mb-16">
+          <div className="row justify-content-center mb-12 mb-lg-16 px-3 px-lg-0">
             <div className="col-lg-10">
               <div className="text-center">
                 <motion.div
@@ -79,15 +79,18 @@ export default function Pricing1({ dark = true, extraClassList = '' }: Pricing1P
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
                 >
-                  <span className="badge-premium mb-4 d-inline-block">
-                    💎 Pricing Plans
+                  <span className="badge-premium mb-4 d-inline-block" style={{ fontSize: 'clamp(0.8rem, 2vw, 0.95rem)' }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', marginRight: '0.5rem', verticalAlign: 'text-top' }}>
+                      <path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41l-7.59-7.59a2.41 2.41 0 0 0-3.41 0Z"/>
+                    </svg>
+                    Pricing Plans
                   </span>
                 </motion.div>
                 <h1 
                   className={`${dark ? 'text-white' : ''} mb-5`}
                   style={{ fontWeight: 800, letterSpacing: '-0.02em' }}
                 >
-                  Choose Your <span className="gradient-text">AI Agent</span> Plan
+                  Choose Your <span className="gradient-text d-block d-sm-inline">AI Agent</span> Plan
                 </h1>
                 <p className="mb-0 fs-5 text-white-50 mx-auto" style={{ maxWidth: '36rem' }}>
                   Deploy in 24 hours. Cancel anytime. No engineering required.
@@ -97,7 +100,7 @@ export default function Pricing1({ dark = true, extraClassList = '' }: Pricing1P
           </div>
         </FadeInSection>
         
-        <div className="row g-6 g-lg-8 pricing-table">
+        <div className="row g-4 g-md-6 g-lg-8 pricing-table">
           {plans.map((plan, index) => (
             <div key={index} className="col-md-6 col-lg-4">
               <FadeInSection delay={index * 0.15}>
@@ -109,10 +112,13 @@ export default function Pricing1({ dark = true, extraClassList = '' }: Pricing1P
                   whileHover={{ y: -12, scale: 1.03 }}
                   className="h-100"
                 >
-                  <div className={`pricing-card-premium h-100 ${plan.badge ? 'featured' : ''}`}>
+                  <div 
+                    className={`pricing-card-premium h-100 ${plan.badge ? 'featured' : ''}`}
+                    style={{ padding: 'clamp(1.5rem, 3vw, 2.5rem)' }}
+                  >
                     {plan.badge && (
                       <div 
-                        className="badge-premium position-absolute"
+                        className="badge-premium position-absolute d-none d-md-block"
                         style={{ 
                           top: '2rem',
                           right: '2rem',
@@ -123,28 +129,40 @@ export default function Pricing1({ dark = true, extraClassList = '' }: Pricing1P
                         {plan.badge}
                       </div>
                     )}
+                    {plan.badge && (
+                      <div 
+                        className="badge-premium d-block d-md-none mb-3"
+                        style={{ 
+                          fontSize: '0.75rem',
+                          padding: '0.4rem 1rem',
+                          display: 'inline-block',
+                        }}
+                      >
+                        {plan.badge}
+                      </div>
+                    )}
                     
-                    <div className="mb-6">
+                    <div className="mb-4 mb-md-6">
                       <h3 
                         className="gradient-text fw-bold mb-2"
-                        style={{ fontSize: '1.5rem' }}
+                        style={{ fontSize: 'clamp(1.25rem, 3vw, 1.5rem)' }}
                       >
                         {plan.name}
                       </h3>
-                      <p className="text-white-50 mb-0" style={{ fontSize: '0.95rem' }}>
+                      <p className="text-white-50 mb-0" style={{ fontSize: 'clamp(0.875rem, 2vw, 0.95rem)' }}>
                         {plan.description}
                       </p>
                     </div>
 
-                    <div className="d-flex align-items-baseline mb-8">
+                    <div className="d-flex align-items-baseline mb-6 mb-md-8">
                       <h1 
                         className={`fw-bold ${dark ? 'text-white' : ''} mb-0`}
-                        style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', letterSpacing: '-0.02em' }}
+                        style={{ fontSize: 'clamp(2rem, 8vw, 3.5rem)', letterSpacing: '-0.02em' }}
                       >
                         {plan.price}
                       </h1>
                       {plan.period && (
-                        <span className="text-white-50 ms-2 fs-5">
+                        <span className="text-white-50 ms-2" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
                           {plan.period}
                         </span>
                       )}
@@ -153,14 +171,14 @@ export default function Pricing1({ dark = true, extraClassList = '' }: Pricing1P
                     <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                       <Link
                         href="/contact"
-                        className="btn btn-gradient-premium w-100 py-3 mb-8"
-                        style={{ fontSize: '1.05rem' }}
+                        className="btn btn-gradient-premium w-100 py-3 mb-6 mb-md-8"
+                        style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.05rem)' }}
                       >
                         <span>{plan.buttonText}</span>
                       </Link>
                     </motion.div>
 
-                    <ul className="list-unstyled d-flex flex-column gap-4 mb-0">
+                    <ul className="list-unstyled d-flex flex-column gap-3 gap-md-4 mb-0">
                       {plan.features.map((feature, i) => (
                         <motion.li 
                           key={i}
@@ -168,13 +186,13 @@ export default function Pricing1({ dark = true, extraClassList = '' }: Pricing1P
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.4, delay: 0.5 + i * 0.05 }}
-                          className="d-flex align-items-start gap-3"
+                          className="d-flex align-items-start gap-2 gap-md-3"
                         >
                           <div 
                             className="flex-shrink-0 mt-1"
                             style={{
-                              width: '1.25rem',
-                              height: '1.25rem',
+                              width: 'clamp(1rem, 2.5vw, 1.25rem)',
+                              height: 'clamp(1rem, 2.5vw, 1.25rem)',
                               borderRadius: '50%',
                               background: 'linear-gradient(135deg, #667eea, #764ba2)',
                               display: 'flex',

@@ -23,7 +23,9 @@ const BentoCard = ({ title, description, icon, className = '', gradient }: Bento
     >
       <div className="bento-card-content">
         <div className="bento-icon-wrapper" style={{ background: gradient }}>
-          {icon}
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            {icon}
+          </svg>
         </div>
         <h3 className="bento-title">{title}</h3>
         <p className="bento-description">{description}</p>
@@ -38,42 +40,42 @@ export default function BentoGrid() {
     {
       title: 'Lightning Fast',
       description: 'Optimized performance with edge computing and caching for instant responses',
-      icon: '⚡',
+      icon: <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />,
       className: 'col-span-12 md:col-span-6 lg:col-span-4',
       gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     },
     {
       title: 'Intelligent AI',
       description: 'Advanced RAG architecture with emotional intelligence and context awareness',
-      icon: '🧠',
+      icon: <><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></>,
       className: 'col-span-12 md:col-span-6 lg:col-span-4',
       gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     },
     {
       title: 'Multi-Channel',
       description: 'Seamless integration across voice, chat, and messaging platforms',
-      icon: '💬',
+      icon: <><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></>,
       className: 'col-span-12 md:col-span-12 lg:col-span-4',
       gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
     },
     {
       title: 'Enterprise Security',
       description: 'Bank-level encryption with SOC 2 compliance and GDPR ready infrastructure',
-      icon: '🔒',
+      icon: <><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></>,
       className: 'col-span-12 md:col-span-6 lg:col-span-6',
       gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
     },
     {
       title: 'Real-time Analytics',
       description: 'Comprehensive dashboards with actionable insights and sentiment analysis',
-      icon: '📊',
+      icon: <><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></>,
       className: 'col-span-12 md:col-span-6 lg:col-span-6',
       gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
     },
     {
       title: 'Continuous Learning',
       description: 'Agents improve over time with machine learning and feedback loops',
-      icon: '🎯',
+      icon: <><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></>,
       className: 'col-span-12 md:col-span-12 lg:col-span-12',
       gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)',
     },
@@ -90,7 +92,10 @@ export default function BentoGrid() {
           transition={{ duration: 0.6 }}
         >
           <div className="badge badge-premium mb-4">
-            ✨ Next-Gen Features
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', marginRight: '0.5rem', verticalAlign: 'text-top' }}>
+              <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
+            </svg>
+            Next-Gen Features
           </div>
           <h2 className="display-4 fw-bold mb-4">
             Built for the

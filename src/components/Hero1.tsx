@@ -40,7 +40,11 @@ export default function Hero1({ dark = true, extraClassList = '' }: Hero1Props) 
                   className="d-inline-block mb-6"
                 >
                   <span className="badge-premium">
-                    🚀 Intelligent AI Agent Platform
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', marginRight: '0.5rem', verticalAlign: 'text-top' }}>
+                      <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"></path>
+                      <path d="m9 12 2 2 4-4"></path>
+                    </svg>
+                    Intelligent AI Agent Platform
                   </span>
                 </motion.div>
 
@@ -53,8 +57,8 @@ export default function Hero1({ dark = true, extraClassList = '' }: Hero1Props) 
                     lineHeight: 1.1
                   }}
                 >
-                  Turn Your Website & Docs <br />
-                  Into an{' '}
+                  <span className="d-block d-lg-inline">Turn Your Website & Docs </span>
+                  <span className="d-block d-lg-inline">Into an{' '}</span>
                   <TypewriterText
                     words={['Intelligent AI Agent', 'Voice + Chat Agent', 'Production RAG Agent']}
                     className="fw-bold gradient-text d-inline-block"
@@ -66,7 +70,7 @@ export default function Hero1({ dark = true, extraClassList = '' }: Hero1Props) 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="mb-8 fs-4 text-white-50 mx-auto"
+                  className="mb-8 fs-4 text-white-50 mx-auto px-3 px-lg-0"
                   style={{ maxWidth: '42rem', lineHeight: 1.7 }}
                 >
                   Deploy a production-ready RAG agent in 24 hours—no engineering required.
@@ -78,17 +82,20 @@ export default function Hero1({ dark = true, extraClassList = '' }: Hero1Props) 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="d-flex gap-4 justify-content-center align-items-center flex-wrap"
+                  className="d-flex gap-3 gap-md-4 justify-content-center align-items-center flex-wrap px-3 px-lg-0"
                 >
                   <Link
                     href="/contact"
-                    className="btn btn-gradient-premium btn-lg px-6 py-3"
+                    className="btn btn-gradient-premium btn-lg px-4 px-md-6 py-3"
+                    style={{ minWidth: '180px' }}
                   >
-                    <span>Deploy Your AI Agent Today</span>
+                    <span className="d-none d-sm-inline">Deploy Your AI Agent Today</span>
+                    <span className="d-inline d-sm-none">Get Started</span>
                   </Link>
                   <Link
                     href="/contact"
-                    className="btn btn-outline-glass btn-lg px-5"
+                    className="btn btn-outline-glass btn-lg px-4 px-md-5"
+                    style={{ minWidth: '140px' }}
                   >
                     Watch Demo
                   </Link>
@@ -148,18 +155,39 @@ export default function Hero1({ dark = true, extraClassList = '' }: Hero1Props) 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
+                className="px-3 px-lg-0"
               >
-                <ul className="d-flex flex-wrap gap-3 gap-md-5 align-items-center justify-content-center mt-10 mb-0 list-unstyled">
-                  {['⚡ Deploy in 24 Hours', '🎯 Zero Engineering Required', '🎤 Voice + Chat Enabled', '🧠 Emotional Intelligence'].map((feature, i) => (
+                <ul className="d-flex flex-wrap gap-2 gap-md-4 align-items-center justify-content-center mt-8 mt-lg-10 mb-0 list-unstyled">
+                  {[
+                    { 
+                      icon: <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />, 
+                      text: 'Deploy in 24 Hours' 
+                    },
+                    { 
+                      icon: <><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></>, 
+                      text: 'Zero Engineering Required' 
+                    },
+                    { 
+                      icon: <><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></>, 
+                      text: 'Voice + Chat Enabled' 
+                    },
+                    { 
+                      icon: <><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></>, 
+                      text: 'Emotional Intelligence' 
+                    }
+                  ].map((feature, i) => (
                     <motion.li
                       key={i}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: 1.3 + i * 0.1 }}
-                      className="glass rounded-pill px-4 py-2 text-white fw-medium"
-                      style={{ fontSize: '0.95rem' }}
+                      className="glass rounded-pill px-3 px-md-4 py-2 text-white fw-medium d-flex align-items-center gap-2"
+                      style={{ fontSize: 'clamp(0.75rem, 2vw, 0.95rem)' }}
                     >
-                      {feature}
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                        {feature.icon}
+                      </svg>
+                      {feature.text}
                     </motion.li>
                   ))}
                 </ul>
@@ -170,21 +198,21 @@ export default function Hero1({ dark = true, extraClassList = '' }: Hero1Props) 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.5 }}
-                className="d-flex gap-6 align-items-center justify-content-center mt-12 review-badges"
+                className="d-flex flex-column flex-md-row gap-4 gap-md-6 align-items-center justify-content-center mt-8 mt-lg-12 review-badges px-3 px-lg-0"
               >
                 <Image
                   className="img-fluid opacity-75 hover-scale"
                   src={`/images/review-logos/${dark ? 'trustpilot_reviews.svg' : 'trustpilot_reviews_2.svg'}`}
                   alt="Trustpilot Reviews"
-                  width={150}
-                  height={40}
+                  width={140}
+                  height={38}
                 />
                 <Image
                   className="img-fluid opacity-75 hover-scale"
                   src={`/images/review-logos/${dark ? 'capterra_reviews.svg' : 'capterra_reviews_2.svg'}`}
                   alt="Capterra Reviews"
-                  width={150}
-                  height={40}
+                  width={140}
+                  height={38}
                 />
               </motion.div>
             </div>

@@ -95,22 +95,25 @@ export default function Features1({ dark = true, extraClassList = '' }: Features
         <div className="row">
           <div className="col-12">
         <FadeInSection>
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 mb-lg-16 px-3 px-lg-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="badge-premium mb-4 d-inline-block">
-                ✨ Platform Features
+              <span className="badge-premium mb-4 d-inline-block" style={{ fontSize: 'clamp(0.8rem, 2vw, 0.95rem)' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', marginRight: '0.5rem', verticalAlign: 'text-top' }}>
+                  <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
+                </svg>
+                Platform Features
               </span>
             </motion.div>
             <h1 
               className={`mb-4 text-${dark ? 'white' : 'dark'}`}
               style={{ fontWeight: 800, letterSpacing: '-0.02em' }}
             >
-              Why Choose Our <span className="gradient-text">AI Agent Platform</span>
+              Why Choose Our <span className="gradient-text d-block d-sm-inline">AI Agent Platform</span>
             </h1>
             <p className="text-white-50 fs-5 mx-auto" style={{ maxWidth: '42rem' }}>
               Everything you need to deploy production-ready AI agents with emotional intelligence
@@ -120,7 +123,7 @@ export default function Features1({ dark = true, extraClassList = '' }: Features
           </div>
         </div>
 
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-6 g-xl-8">
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 g-lg-6 g-xl-8">
           {features.map((feature, index) => (
             <div key={index} className="col">
               <FadeInSection delay={index * 0.1}>
@@ -129,20 +132,20 @@ export default function Features1({ dark = true, extraClassList = '' }: Features
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   className="h-100"
                 >
-                  <div className="feature-card-modern h-100">
-                    <div className="icon-wrapper">
-                      <div style={{ width: '2rem', height: '2rem', color: 'white' }}>
+                  <div className="feature-card-modern h-100" style={{ padding: 'clamp(1.25rem, 3vw, 2rem)' }}>
+                    <div className="icon-wrapper" style={{ marginBottom: 'clamp(1rem, 2vw, 1.5rem)' }}>
+                      <div style={{ width: 'clamp(1.75rem, 4vw, 2rem)', height: 'clamp(1.75rem, 4vw, 2rem)', color: 'white' }}>
                         {feature.icon}
                       </div>
                     </div>
                     <div className="content">
                       <h4 
                         className={`mb-3 text-${dark ? 'white' : 'dark'}`}
-                        style={{ fontWeight: 700 }}
+                        style={{ fontWeight: 700, fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)' }}
                       >
                         {feature.title}
                       </h4>
-                      <p className="text-white-50 mb-0" style={{ lineHeight: 1.7 }}>
+                      <p className="text-white-50 mb-0" style={{ lineHeight: 1.7, fontSize: 'clamp(0.9375rem, 2vw, 1rem)' }}>
                         {feature.description}
                       </p>
                     </div>
@@ -159,13 +162,13 @@ export default function Features1({ dark = true, extraClassList = '' }: Features
                 whileHover={{ scale: 1.02, y: -5 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <div className="glass-card-premium p-6 p-lg-8">
-                  <div className="d-flex flex-column flex-lg-row gap-6 align-items-center justify-content-center text-center text-lg-start">
+                <div className="glass-card-premium p-4 p-md-6 p-lg-8">
+                  <div className="d-flex flex-column flex-lg-row gap-4 gap-md-6 align-items-center justify-content-center text-center text-lg-start">
                     <div 
                       className="icon-wrapper flex-shrink-0"
                       style={{
-                        width: '5rem',
-                        height: '5rem',
+                        width: 'clamp(3.5rem, 10vw, 5rem)',
+                        height: 'clamp(3.5rem, 10vw, 5rem)',
                         borderRadius: '1.25rem',
                         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                         display: 'flex',
@@ -175,7 +178,7 @@ export default function Features1({ dark = true, extraClassList = '' }: Features
                       }}
                     >
                       <svg 
-                        style={{ width: '2.5rem', height: '2.5rem', color: 'white' }}
+                        style={{ width: 'clamp(2rem, 5vw, 2.5rem)', height: 'clamp(2rem, 5vw, 2.5rem)', color: 'white' }}
                         xmlns="http://www.w3.org/2000/svg" 
                         fill="none" 
                         viewBox="0 0 40 40"
@@ -189,11 +192,11 @@ export default function Features1({ dark = true, extraClassList = '' }: Features
                     <div className="content flex-grow-1">
                       <h3 
                         className={`mb-3 text-${dark ? 'white' : 'dark'}`}
-                        style={{ fontWeight: 800 }}
+                        style={{ fontWeight: 800, fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}
                       >
-                        Drop-In Widget. <span className="gradient-text">Enterprise Ready.</span>
+                        Drop-In Widget. <span className="gradient-text d-block d-sm-inline">Enterprise Ready.</span>
                       </h3>
-                      <p className="text-white-50 mb-0 fs-5" style={{ lineHeight: 1.7 }}>
+                      <p className="text-white-50 mb-0 fs-5" style={{ lineHeight: 1.7, fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
                         Easy install. Secure, customizable, and integrates seamlessly with your GTM stack. 
                         Production-ready in 24 hours.
                       </p>
@@ -206,9 +209,13 @@ export default function Features1({ dark = true, extraClassList = '' }: Features
         </div>
 
         <FadeInSection delay={0.9}>
-          <div className="text-center mt-16">
+          <div className="text-center mt-12 mt-lg-16 px-3 px-lg-0">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link href="/contact" className="btn btn-gradient-premium btn-lg px-8 py-3">
+              <Link 
+                href="/contact" 
+                className="btn btn-gradient-premium btn-lg px-6 px-md-8 py-3"
+                style={{ minWidth: '200px' }}
+              >
                 <span>See a Live Demo</span>
               </Link>
             </motion.div>

@@ -18,7 +18,10 @@ export default function PremiumShowcase() {
           transition={{ duration: 0.6 }}
         >
           <div className="badge-premium mb-4 d-inline-block">
-            ✨ Ultra-Premium Experience
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', marginRight: '0.5rem', verticalAlign: 'text-top' }}>
+              <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
+            </svg>
+            Ultra-Premium Experience
           </div>
           
           <SplitText className="display-3 fw-bold text-white mb-4">
@@ -47,7 +50,11 @@ export default function PremiumShowcase() {
             <div className="card-ultra h-100">
               <div className="text-center">
                 <div className="icon-wrapper-premium mb-4">
-                  <span style={{ fontSize: '3rem' }}>🧲</span>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="m6 15-4-4 6.75-6.77a7.79 7.79 0 0 1 11 11L13 22l-4-4 6.39-6.36a2.14 2.14 0 0 0-3-3L6 15"/>
+                    <path d="m5 8 4 4"/>
+                    <path d="m12 15 4 4"/>
+                  </svg>
                 </div>
                 <h3 className="h4 text-white mb-3">Magnetic Buttons</h3>
                 <p className="text-white-75 mb-5">
@@ -74,7 +81,11 @@ export default function PremiumShowcase() {
             <div className="card-ultra hover-tilt-premium h-100">
               <div className="text-center">
                 <div className="icon-wrapper-premium mb-4">
-                  <span style={{ fontSize: '3rem' }}>🎯</span>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <circle cx="12" cy="12" r="6"/>
+                    <circle cx="12" cy="12" r="2"/>
+                  </svg>
                 </div>
                 <h3 className="h4 text-white mb-3">3D Transforms</h3>
                 <p className="text-white-75 mb-5">
@@ -98,7 +109,9 @@ export default function PremiumShowcase() {
             <div className="card-ultra hover-glow-premium h-100">
               <div className="text-center">
                 <div className="icon-wrapper-premium mb-4">
-                  <span style={{ fontSize: '3rem' }}>✨</span>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
+                  </svg>
                 </div>
                 <h3 className="h4 text-white mb-3">Glow Effects</h3>
                 <p className="text-white-75 mb-5">
@@ -147,8 +160,11 @@ export default function PremiumShowcase() {
         <div className="row g-6">
           <div className="col-lg-12">
             <ParallaxText speed={0.6} className="text-center">
-              <h3 className="display-2 fw-bold text-white opacity-50">
-                Scroll to See Parallax ✨
+              <h3 className="display-2 fw-bold text-white opacity-50 d-flex align-items-center justify-content-center gap-3">
+                Scroll to See Parallax
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
+                </svg>
               </h3>
             </ParallaxText>
           </div>
@@ -157,12 +173,12 @@ export default function PremiumShowcase() {
         {/* Feature Highlights Grid */}
         <div className="row g-4 mt-16">
           {[
-            { icon: '🎨', title: 'Glassmorphism', desc: 'Modern frosted glass effects' },
-            { icon: '🌊', title: 'Liquid Animations', desc: 'Smooth morphing shapes' },
-            { icon: '⚡', title: 'Hardware Accelerated', desc: 'Buttery smooth 60fps' },
-            { icon: '🎭', title: 'Context-Aware Cursor', desc: 'Smart cursor interactions' },
-            { icon: '📊', title: 'Scroll Progress', desc: 'Beautiful progress indicators' },
-            { icon: '🎪', title: 'Interactive Particles', desc: 'Mouse-reactive particles' },
+            { icon: <><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M9 3v18M3 9h18"/></>, title: 'Glassmorphism', desc: 'Modern frosted glass effects' },
+            { icon: <><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 16v-4"/><path d="M12 8h.01"/></>, title: 'Liquid Animations', desc: 'Smooth morphing shapes' },
+            { icon: <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />, title: 'Hardware Accelerated', desc: 'Buttery smooth 60fps' },
+            { icon: <><path d="m14.622 17.897-10.68-2.913"/><path d="M18.376 2.622a1 1 0 1 1 3.002 3.002L17.36 9.643a.5.5 0 0 0 0 .707l.944.944a2.41 2.41 0 0 1 0 3.408l-.944.944a.5.5 0 0 1-.707 0L8.354 7.348a.5.5 0 0 1 0-.707l.944-.944a2.41 2.41 0 0 1 3.408 0l.944.944a.5.5 0 0 0 .707 0z"/><path d="M9 8c-1.804 2.71-3.97 3.46-6.583 3.948a.507.507 0 0 0-.302.819l7.32 8.883a1 1 0 0 0 1.185.204C12.735 20.405 16 16.792 16 15"/></>, title: 'Context-Aware Cursor', desc: 'Smart cursor interactions' },
+            { icon: <><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></>, title: 'Scroll Progress', desc: 'Beautiful progress indicators' },
+            { icon: <><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></>, title: 'Interactive Particles', desc: 'Mouse-reactive particles' },
           ].map((feature, index) => (
             <motion.div 
               key={index}
@@ -182,7 +198,6 @@ export default function PremiumShowcase() {
                 <div 
                   className="flex-shrink-0"
                   style={{
-                    fontSize: '2rem',
                     width: '60px',
                     height: '60px',
                     display: 'flex',
@@ -192,7 +207,9 @@ export default function PremiumShowcase() {
                     borderRadius: '1rem',
                   }}
                 >
-                  {feature.icon}
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    {feature.icon}
+                  </svg>
                 </div>
                 <div>
                   <h4 className="h6 text-white mb-2">{feature.title}</h4>

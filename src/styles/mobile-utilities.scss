@@ -1,0 +1,490 @@
+/* =============================================
+   MOBILE UTILITY CLASSES
+   Complete set of mobile-first utilities
+   ============================================= */
+
+/* =============================================
+   MOBILE VISIBILITY UTILITIES
+   ============================================= */
+
+// Show/hide utilities for mobile
+.mobile-only {
+  @media (min-width: 992px) {
+    display: none !important;
+  }
+}
+
+.desktop-only {
+  @media (max-width: 991.98px) {
+    display: none !important;
+  }
+}
+
+.tablet-only {
+  display: none !important;
+  
+  @media (min-width: 576px) and (max-width: 991.98px) {
+    display: block !important;
+  }
+}
+
+/* =============================================
+   MOBILE TOUCH TARGET UTILITIES
+   ============================================= */
+
+.touch-target {
+  @media (max-width: 991.98px) {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+.touch-target-lg {
+  @media (max-width: 991.98px) {
+    min-width: 52px !important;
+    min-height: 52px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* =============================================
+   MOBILE SPACING UTILITIES
+   ============================================= */
+
+@media (max-width: 991.98px) {
+  // Mobile-specific padding
+  .p-mobile-0 { padding: 0 !important; }
+  .p-mobile-1 { padding: 0.25rem !important; }
+  .p-mobile-2 { padding: 0.5rem !important; }
+  .p-mobile-3 { padding: 1rem !important; }
+  .p-mobile-4 { padding: 1.5rem !important; }
+  .p-mobile-5 { padding: 2rem !important; }
+  
+  // Mobile-specific margin
+  .m-mobile-0 { margin: 0 !important; }
+  .m-mobile-1 { margin: 0.25rem !important; }
+  .m-mobile-2 { margin: 0.5rem !important; }
+  .m-mobile-3 { margin: 1rem !important; }
+  .m-mobile-4 { margin: 1.5rem !important; }
+  .m-mobile-5 { margin: 2rem !important; }
+  
+  // Mobile-specific margin top
+  .mt-mobile-0 { margin-top: 0 !important; }
+  .mt-mobile-2 { margin-top: 0.5rem !important; }
+  .mt-mobile-3 { margin-top: 1rem !important; }
+  .mt-mobile-4 { margin-top: 1.5rem !important; }
+  .mt-mobile-5 { margin-top: 2rem !important; }
+  .mt-mobile-6 { margin-top: 2.5rem !important; }
+  
+  // Mobile-specific margin bottom
+  .mb-mobile-0 { margin-bottom: 0 !important; }
+  .mb-mobile-2 { margin-bottom: 0.5rem !important; }
+  .mb-mobile-3 { margin-bottom: 1rem !important; }
+  .mb-mobile-4 { margin-bottom: 1.5rem !important; }
+  .mb-mobile-5 { margin-bottom: 2rem !important; }
+  .mb-mobile-6 { margin-bottom: 2.5rem !important; }
+  
+  // Mobile-specific horizontal padding
+  .px-mobile-2 { padding-left: 0.5rem !important; padding-right: 0.5rem !important; }
+  .px-mobile-3 { padding-left: 1rem !important; padding-right: 1rem !important; }
+  .px-mobile-4 { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+  
+  // Mobile-specific vertical padding
+  .py-mobile-2 { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+  .py-mobile-3 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+  .py-mobile-4 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+}
+
+/* =============================================
+   MOBILE TYPOGRAPHY UTILITIES
+   ============================================= */
+
+@media (max-width: 991.98px) {
+  .fs-mobile-xs { font-size: 0.75rem !important; }
+  .fs-mobile-sm { font-size: 0.875rem !important; }
+  .fs-mobile-base { font-size: 1rem !important; }
+  .fs-mobile-lg { font-size: 1.125rem !important; }
+  .fs-mobile-xl { font-size: 1.25rem !important; }
+  
+  .fw-mobile-normal { font-weight: 400 !important; }
+  .fw-mobile-medium { font-weight: 500 !important; }
+  .fw-mobile-semibold { font-weight: 600 !important; }
+  .fw-mobile-bold { font-weight: 700 !important; }
+  
+  .text-mobile-center { text-align: center !important; }
+  .text-mobile-left { text-align: left !important; }
+  .text-mobile-right { text-align: right !important; }
+  
+  .lh-mobile-tight { line-height: 1.2 !important; }
+  .lh-mobile-normal { line-height: 1.5 !important; }
+  .lh-mobile-relaxed { line-height: 1.7 !important; }
+}
+
+/* =============================================
+   MOBILE LAYOUT UTILITIES
+   ============================================= */
+
+@media (max-width: 991.98px) {
+  .w-mobile-full { width: 100% !important; }
+  .w-mobile-auto { width: auto !important; }
+  .w-mobile-50 { width: 50% !important; }
+  
+  .h-mobile-auto { height: auto !important; }
+  .h-mobile-full { height: 100% !important; }
+  
+  .d-mobile-none { display: none !important; }
+  .d-mobile-block { display: block !important; }
+  .d-mobile-flex { display: flex !important; }
+  .d-mobile-inline-flex { display: inline-flex !important; }
+  .d-mobile-grid { display: grid !important; }
+  
+  .flex-mobile-column { flex-direction: column !important; }
+  .flex-mobile-row { flex-direction: row !important; }
+  .flex-mobile-wrap { flex-wrap: wrap !important; }
+  .flex-mobile-nowrap { flex-wrap: nowrap !important; }
+  
+  .justify-content-mobile-start { justify-content: flex-start !important; }
+  .justify-content-mobile-center { justify-content: center !important; }
+  .justify-content-mobile-end { justify-content: flex-end !important; }
+  .justify-content-mobile-between { justify-content: space-between !important; }
+  
+  .align-items-mobile-start { align-items: flex-start !important; }
+  .align-items-mobile-center { align-items: center !important; }
+  .align-items-mobile-end { align-items: flex-end !important; }
+  .align-items-mobile-stretch { align-items: stretch !important; }
+}
+
+/* =============================================
+   MOBILE BUTTON UTILITIES
+   ============================================= */
+
+@media (max-width: 991.98px) {
+  .btn-mobile-full {
+    width: 100% !important;
+    display: block !important;
+  }
+  
+  .btn-mobile-sm {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  .btn-mobile-md {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .btn-mobile-lg {
+    padding: 1rem 2rem !important;
+    font-size: 1.125rem !important;
+  }
+}
+
+/* =============================================
+   MOBILE CARD UTILITIES
+   ============================================= */
+
+@media (max-width: 991.98px) {
+  .card-mobile-flat {
+    border-radius: 0.5rem !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  .card-mobile-compact {
+    padding: 1rem !important;
+    
+    .card-body {
+      padding: 1rem !important;
+    }
+  }
+}
+
+/* =============================================
+   MOBILE OVERFLOW UTILITIES
+   ============================================= */
+
+@media (max-width: 991.98px) {
+  .overflow-mobile-hidden { overflow: hidden !important; }
+  .overflow-mobile-auto { overflow: auto !important; }
+  .overflow-mobile-scroll { overflow: scroll !important; }
+  
+  .overflow-x-mobile-hidden { overflow-x: hidden !important; }
+  .overflow-x-mobile-auto { overflow-x: auto !important; }
+  .overflow-x-mobile-scroll { overflow-x: scroll !important; }
+  
+  .overflow-y-mobile-hidden { overflow-y: hidden !important; }
+  .overflow-y-mobile-auto { overflow-y: auto !important; }
+  .overflow-y-mobile-scroll { overflow-y: scroll !important; }
+}
+
+/* =============================================
+   MOBILE POSITION UTILITIES
+   ============================================= */
+
+@media (max-width: 991.98px) {
+  .position-mobile-static { position: static !important; }
+  .position-mobile-relative { position: relative !important; }
+  .position-mobile-absolute { position: absolute !important; }
+  .position-mobile-fixed { position: fixed !important; }
+  .position-mobile-sticky { position: sticky !important; }
+}
+
+/* =============================================
+   MOBILE Z-INDEX UTILITIES
+   ============================================= */
+
+@media (max-width: 991.98px) {
+  .z-mobile-0 { z-index: 0 !important; }
+  .z-mobile-1 { z-index: 1 !important; }
+  .z-mobile-10 { z-index: 10 !important; }
+  .z-mobile-50 { z-index: 50 !important; }
+  .z-mobile-100 { z-index: 100 !important; }
+  .z-mobile-1000 { z-index: 1000 !important; }
+}
+
+/* =============================================
+   MOBILE BORDER UTILITIES
+   ============================================= */
+
+@media (max-width: 991.98px) {
+  .border-mobile-0 { border: 0 !important; }
+  .border-mobile { border: 1px solid rgba(255, 255, 255, 0.1) !important; }
+  .border-mobile-top { border-top: 1px solid rgba(255, 255, 255, 0.1) !important; }
+  .border-mobile-bottom { border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; }
+  .border-mobile-left { border-left: 1px solid rgba(255, 255, 255, 0.1) !important; }
+  .border-mobile-right { border-right: 1px solid rgba(255, 255, 255, 0.1) !important; }
+  
+  .rounded-mobile { border-radius: 0.5rem !important; }
+  .rounded-mobile-lg { border-radius: 1rem !important; }
+  .rounded-mobile-xl { border-radius: 1.5rem !important; }
+  .rounded-mobile-pill { border-radius: 50rem !important; }
+  .rounded-mobile-circle { border-radius: 50% !important; }
+}
+
+/* =============================================
+   MOBILE GAP UTILITIES
+   ============================================= */
+
+@media (max-width: 991.98px) {
+  .gap-mobile-0 { gap: 0 !important; }
+  .gap-mobile-1 { gap: 0.25rem !important; }
+  .gap-mobile-2 { gap: 0.5rem !important; }
+  .gap-mobile-3 { gap: 1rem !important; }
+  .gap-mobile-4 { gap: 1.5rem !important; }
+  .gap-mobile-5 { gap: 2rem !important; }
+  
+  .row-gap-mobile-0 { row-gap: 0 !important; }
+  .row-gap-mobile-2 { row-gap: 0.5rem !important; }
+  .row-gap-mobile-3 { row-gap: 1rem !important; }
+  .row-gap-mobile-4 { row-gap: 1.5rem !important; }
+  
+  .column-gap-mobile-0 { column-gap: 0 !important; }
+  .column-gap-mobile-2 { column-gap: 0.5rem !important; }
+  .column-gap-mobile-3 { column-gap: 1rem !important; }
+  .column-gap-mobile-4 { column-gap: 1.5rem !important; }
+}
+
+/* =============================================
+   MOBILE ASPECT RATIO UTILITIES
+   ============================================= */
+
+@media (max-width: 991.98px) {
+  .ratio-mobile-1x1 {
+    position: relative;
+    
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+  }
+  
+  .ratio-mobile-16x9 {
+    position: relative;
+    
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+    }
+  }
+  
+  .ratio-mobile-4x3 {
+    position: relative;
+    
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 75%;
+    }
+  }
+}
+
+/* =============================================
+   MOBILE SCROLL BEHAVIOR
+   ============================================= */
+
+@media (max-width: 991.98px) {
+  .scroll-mobile-smooth {
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  .scroll-mobile-snap-x {
+    scroll-snap-type: x mandatory !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  .scroll-mobile-snap-y {
+    scroll-snap-type: y mandatory !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  .scroll-mobile-snap-center {
+    scroll-snap-align: center !important;
+  }
+  
+  .scroll-mobile-snap-start {
+    scroll-snap-align: start !important;
+  }
+}
+
+/* =============================================
+   MOBILE ACCESSIBILITY
+   ============================================= */
+
+@media (max-width: 991.98px) {
+  // Better focus states for mobile
+  a, button, input, select, textarea {
+    &:focus {
+      outline: 2px solid rgba(102, 126, 234, 0.5) !important;
+      outline-offset: 2px !important;
+    }
+  }
+  
+  // Skip to main content
+  .skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #667eea;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+    
+    &:focus {
+      top: 0;
+    }
+  }
+}
+
+/* =============================================
+   MOBILE PERFORMANCE
+   ============================================= */
+
+@media (max-width: 991.98px) {
+  // Reduce motion for better performance
+  .reduce-motion {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  // Hardware acceleration
+  .hw-accelerate {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+/* =============================================
+   MOBILE SAFE AREA UTILITIES
+   ============================================= */
+
+@supports (padding: max(0px)) {
+  @media (max-width: 991.98px) {
+    .safe-area-inset-top {
+      padding-top: max(1rem, env(safe-area-inset-top)) !important;
+    }
+    
+    .safe-area-inset-bottom {
+      padding-bottom: max(1rem, env(safe-area-inset-bottom)) !important;
+    }
+    
+    .safe-area-inset-left {
+      padding-left: max(1rem, env(safe-area-inset-left)) !important;
+    }
+    
+    .safe-area-inset-right {
+      padding-right: max(1rem, env(safe-area-inset-right)) !important;
+    }
+    
+    .safe-area-inset-x {
+      padding-left: max(1rem, env(safe-area-inset-left)) !important;
+      padding-right: max(1rem, env(safe-area-inset-right)) !important;
+    }
+    
+    .safe-area-inset-y {
+      padding-top: max(1rem, env(safe-area-inset-top)) !important;
+      padding-bottom: max(1rem, env(safe-area-inset-bottom)) !important;
+    }
+  }
+}
+
+/* =============================================
+   MOBILE SPECIFIC ANIMATIONS
+   ============================================= */
+
+@media (max-width: 991.98px) {
+  @keyframes mobile-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes mobile-slide-up {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes mobile-slide-in-right {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .mobile-fade-in {
+    animation: mobile-fade-in 0.3s ease-in-out;
+  }
+  
+  .mobile-slide-up {
+    animation: mobile-slide-up 0.4s ease-out;
+  }
+  
+  .mobile-slide-in-right {
+    animation: mobile-slide-in-right 0.3s ease-out;
+  }
+}
+

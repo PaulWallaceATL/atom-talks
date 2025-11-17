@@ -29,35 +29,35 @@ export default function Footer({ dark = true, extraClassList = '' }: FooterProps
         <DotPattern />
         
         <div className="container position-relative" style={{ zIndex: 1 }}>
-        <div className="row g-10">
+        <div className="row g-6 g-md-8 g-lg-10">
           <div className="col-lg-9 col-xl-8 order-lg-2">
-            <div className="row g-6">
-              <div className="col-md-4 col-lg-4">
+            <div className="row g-4 g-md-6">
+              <div className="col-sm-6 col-md-4 col-lg-4">
                 <FadeInSection delay={0.1}>
-                  <div className="footer-widget text-center text-md-start">
-                  <h6 className={`${dark ? 'text-white' : ''} mb-2`}>Navigation</h6>
-                  <ul className="link-list list-unstyled mb-0">
+                  <div className="footer-widget text-center text-sm-start">
+                  <h6 className={`${dark ? 'text-white' : ''} mb-3`} style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>Navigation</h6>
+                  <ul className="link-list list-unstyled mb-0 d-flex flex-column gap-2">
                     <li><Link href="/" prefetch={true}>Home</Link></li>
                     <li><Link href="/contact" prefetch={true}>Contact</Link></li>
                   </ul>
                 </div>
                 </FadeInSection>
               </div>
-              <div className="col-md-4 col-lg-4">
+              <div className="col-sm-6 col-md-4 col-lg-4">
                 <FadeInSection delay={0.2}>
-                  <div className="footer-widget text-center text-md-start">
-                  <h6 className={`${dark ? 'text-white' : ''} mb-2`}>Company</h6>
-                  <ul className="link-list list-unstyled mb-0">
+                  <div className="footer-widget text-center text-sm-start">
+                  <h6 className={`${dark ? 'text-white' : ''} mb-3`} style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>Company</h6>
+                  <ul className="link-list list-unstyled mb-0 d-flex flex-column gap-2">
                     <li><Link href="/" prefetch={true}>About Us</Link></li>
                     <li><Link href="/contact" prefetch={true}>Get in Touch</Link></li>
                   </ul>
                 </div>
                 </FadeInSection>
               </div>
-              <div className="col-md-4 col-lg-4">
+              <div className="col-12 col-md-4 col-lg-4">
                 <FadeInSection delay={0.3}>
-                  <div className="footer-widget text-center text-md-start">
-                  <h6 className={`${dark ? 'text-white' : ''} mb-4`}>Get Updates</h6>
+                  <div className="footer-widget text-center text-sm-start">
+                  <h6 className={`${dark ? 'text-white' : ''} mb-4`} style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>Get Updates</h6>
                   <form onSubmit={handleNewsletterSubmit}>
                     <div className="input-group">
                       <input 
@@ -67,11 +67,12 @@ export default function Footer({ dark = true, extraClassList = '' }: FooterProps
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
+                        style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}
                       />
                       <motion.button 
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className={`btn btn-${dark ? 'primary-dark' : 'primary'} px-4`} 
+                        className={`btn btn-${dark ? 'primary-dark' : 'primary'} px-3 px-md-4`} 
                         type="submit"
                       >
                         <svg
