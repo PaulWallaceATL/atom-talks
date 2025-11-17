@@ -24,7 +24,7 @@ const BentoCard = ({ title, description, icon, className = '', gradient }: Bento
       <div className="bento-card-content">
         <div className="bento-icon-wrapper" style={{ background: gradient }}>
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            {icon}
+          {icon}
           </svg>
         </div>
         <h3 className="bento-title">{title}</h3>

@@ -20,6 +20,31 @@ body {
   z-index: 1030;
 }
 
+/* Ensure mobile menu works properly */
+@media (max-width: 991.98px) {
+  .navbar {
+    &.fixed-top {
+      background: rgba(2, 6, 23, 0.98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  }
+  
+  /* Fix hamburger visibility */
+  .navbar-toggler {
+    z-index: 1031;
+    
+    .navbar-toggler-icon span {
+      background: #facc15;
+    }
+  }
+  
+  /* Fix logo visibility */
+  .navbar-brand {
+    z-index: 1031;
+  }
+}
+
 // Smooth page transitions
 .page-transition {
   animation: pageTransition 0.3s ease-in-out;

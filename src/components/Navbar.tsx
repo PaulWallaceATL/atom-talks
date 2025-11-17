@@ -29,21 +29,12 @@ export default function Navbar({ dark = true, extraClassList = '' }: NavbarProps
   useEffect(() => {
     // Prevent body scroll when mobile menu is open
     if (isMobileMenuOpen) {
-      document.body.classList.add('menu-open');
       document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
     } else {
-      document.body.classList.remove('menu-open');
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
     }
     return () => {
-      document.body.classList.remove('menu-open');
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
     };
   }, [isMobileMenuOpen]);
 

@@ -22,7 +22,3 @@ Description: AI Content Writing & Copywriting Landing Page
 // Import mobile-responsive styles (MUST be last for proper override)
 @import './mobile-responsive.scss';
 @import './mobile-utilities.scss';
-
-// CRITICAL FIXES - Must be absolute last
-@import './critical-fixes.scss';
-

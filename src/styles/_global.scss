@@ -25,13 +25,6 @@ body {
 
 a {
 	transition: $transition-fast;
-	
-	@media (max-width: 991.98px) {
-		// Better touch targets
-		min-height: 44px;
-		display: inline-flex;
-		align-items: center;
-	}
 }
 
 @import "components/gradients";
