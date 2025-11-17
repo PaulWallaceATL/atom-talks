@@ -8,6 +8,11 @@ import Pricing1 from '@/components/Pricing1';
 import FAQ from '@/components/FAQ';
 import CTA1 from '@/components/CTA1';
 import Footer from '@/components/Footer';
+import CustomCursor from '@/components/CustomCursor';
+import InteractiveParticles from '@/components/InteractiveParticles';
+import ScrollProgress from '@/components/ScrollProgress';
+import BentoGrid from '@/components/BentoGrid';
+import PremiumShowcase from '@/components/PremiumShowcase';
 
 export const metadata = {
   title: 'AtomTalks - AI Agent Platform | Deploy RAG Agents in 24 Hours',
@@ -25,36 +30,49 @@ export const revalidate = false;
 
 export default function HomePage() {
   return (
-    <div className="wrapper d-flex flex-column justify-between">
-      <Navbar dark={true} extraClassList="bg-dark" />
+    <>
+      {/* Ultra-Premium Interactive Elements */}
+      <CustomCursor />
+      <InteractiveParticles />
+      <ScrollProgress />
+      
+      <div className="wrapper d-flex flex-column justify-between texture-grain">
+        <Navbar dark={true} extraClassList="bg-dark" />
 
-      <main className="flex-grow-1">
-        {/* Hero Section */}
-        <Hero1 dark={true} extraClassList="bg-dark py-10 py-lg-15" />
+        <main className="flex-grow-1">
+          {/* Hero Section */}
+          <Hero1 dark={true} extraClassList="bg-dark py-10 py-lg-15" />
 
-        {/* Core Features - 7 Value Props */}
-        <Features1 dark={true} extraClassList="bg-dark-blue-4" />
+          {/* Core Features - 7 Value Props */}
+          <Features1 dark={true} extraClassList="bg-dark-blue-4" />
 
-        {/* Stats Section */}
-        <Stats dark={true} extraClassList="bg-dark" />
+          {/* Stats Section */}
+          <Stats dark={true} extraClassList="bg-dark" />
 
-        {/* Support Reduction Feature */}
-        <Features3 dark={true} />
+          {/* Bento Grid - Next-Gen Features */}
+          <BentoGrid />
 
-        {/* Emotional Intelligence Feature */}
-        <Features2 dark={true} extraClassList="bg-dark-blue-4" />
+          {/* Premium Showcase - Advanced Interactions */}
+          <PremiumShowcase />
 
-        {/* Pricing Section */}
-        <Pricing1 dark={true} extraClassList="py-10 py-lg-15" />
+          {/* Support Reduction Feature */}
+          <Features3 dark={true} />
 
-        {/* FAQ Section */}
-        <FAQ dark={true} extraClassList="py-10 py-lg-15" />
+          {/* Emotional Intelligence Feature */}
+          <Features2 dark={true} extraClassList="bg-dark-blue-4" />
 
-        {/* CTA Section */}
-        <CTA1 dark={true} />
-      </main>
+          {/* Pricing Section */}
+          <Pricing1 dark={true} extraClassList="py-10 py-lg-15" />
 
-      <Footer dark={true} extraClassList="pt-10 pt-lg-15" />
-    </div>
+          {/* FAQ Section */}
+          <FAQ dark={true} extraClassList="py-10 py-lg-15" />
+
+          {/* CTA Section */}
+          <CTA1 dark={true} />
+        </main>
+
+        <Footer dark={true} extraClassList="pt-10 pt-lg-15" />
+      </div>
+    </>
   );
 }
