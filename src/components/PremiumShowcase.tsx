@@ -7,7 +7,7 @@ import { ParallaxText } from './ParallaxSection';
 
 export default function PremiumShowcase() {
   return (
-    <section className="premium-showcase py-20 bg-noise gradient-mesh-premium section-premium-bg position-relative overflow-hidden">
+    <section className="premium-showcase py-20 section-premium-bg position-relative overflow-hidden">
       <div className="container position-relative" style={{ zIndex: 2 }}>
         {/* Section Header */}
         <motion.div 

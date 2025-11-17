@@ -36,7 +36,7 @@ export default function HomePage() {
       <InteractiveParticles />
       <ScrollProgress />
       
-      <div className="wrapper d-flex flex-column justify-between texture-grain">
+      <div className="wrapper d-flex flex-column justify-between">
         <Navbar dark={true} extraClassList="bg-dark" />
 
         <main className="flex-grow-1">
