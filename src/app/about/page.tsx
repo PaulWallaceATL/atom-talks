@@ -41,11 +41,10 @@ export default function AboutPage() {
                     10,000+ Writers, Marketers, & Business owners Love AtomTalks.
                   </h2>
                   <p className="mb-8">
-                    With a few clicks of a button, you can create a whole outline, opening
-                    paragraph, and body for your blog.
+                    Deploy intelligent AI agents from your content in 24 hours with zero engineering required.
                   </p>
-                  <Link href="/login" className="btn btn-lg btn-gradient-1">
-                    Start Writing - It's Free
+                  <Link href="/contact" className="btn btn-lg btn-gradient-1">
+                    Get Started Today
                   </Link>
                 </div>
               </div>
