@@ -1,234 +1,251 @@
-# GenAI - Next.js with Payload CMS
+# AtomTalks - AI Agent Platform
 
-A modern AI content writing and copywriting website built with Next.js 15, TypeScript, Payload CMS, and Bootstrap 5.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FPaulWallaceATL%2Fatom-talks)
 
-## Features
+A modern AI Agent platform built with Next.js 15, TypeScript, Payload CMS, and enhanced with [ReactBits](https://reactbits.dev/) animations.
 
-- ✅ Next.js 15 with App Router
-- ✅ TypeScript for type safety
-- ✅ Payload CMS for content management
-- ✅ MongoDB for database
-- ✅ Bootstrap 5 for styling
-- ✅ SCSS support
-- ✅ SEO optimized
-- ✅ Responsive design
-- ✅ Dark mode support
-- ✅ Ready for Vercel deployment
+## 🚀 Features
 
-## Getting Started
+- ✅ **Next.js 15** with App Router for optimal performance
+- ✅ **TypeScript** for type safety
+- ✅ **Payload CMS** for headless content management
+- ✅ **ReactBits Animations** - Beautiful, interactive UI components
+- ✅ **Framer Motion** for smooth animations
+- ✅ **Bootstrap 5** for responsive design
+- ✅ **SCSS** for powerful styling
+- ✅ **MongoDB** integration for data storage
+- ✅ **SEO Optimized** with proper metadata
+- ✅ **Dark Mode** native support
+- ✅ **Vercel Ready** - Deploy in minutes
+
+## 🎨 ReactBits Components
+
+The site features premium animations from ReactBits including:
+
+- **ParticlesBackground** - Connected particle networks
+- **FloatingElements** - Ambient gradient orbs
+- **GradientBlob** - Morphing gradient shapes
+- **GridBackground** - Animated grid patterns
+- **MeshGradient** - Flowing gradient meshes
+- **DotPattern** - Animated dot backgrounds
+- **CardSpotlight** - 3D tilt effects on hover
+- **GlowingCard** - Cards with animated glow
+- **ShimmerButton** - Buttons with shimmer effects
+- **TypewriterText** - Smooth typewriter animations
+- **FadeInSection** - Scroll-triggered fade-ins
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 15.2.3
+- **Language:** TypeScript 5
+- **Styling:** Bootstrap 5.3 + SCSS + Custom Animations
+- **Animations:** Framer Motion + ReactBits
+- **CMS:** Payload CMS 3.x
+- **Database:** MongoDB
+- **Deployment:** Vercel
+- **Package Manager:** npm
+
+## 🏃 Quick Start
 
 ### Prerequisites
 
-- Node.js 18+ and npm
-- MongoDB database (local or MongoDB Atlas)
+- Node.js 18 or higher
+- MongoDB (local or MongoDB Atlas)
 
 ### Installation
 
-1. **Clone and install dependencies:**
-
 ```bash
-cd nextjs-site
+# Clone the repository
+git clone https://github.com/PaulWallaceATL/atom-talks.git
+cd atom-talks
+
+# Install dependencies
 npm install
+
+# Set up environment variables
+cp .env.example .env.local
+# Edit .env.local with your values
+
+# Start MongoDB (if running locally)
+mongod
+
+# Run development server
+npm run dev
 ```
 
-2. **Set up environment variables:**
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Create a `.env.local` file in the root directory:
+### Environment Variables
+
+Create a `.env.local` file:
 
 ```env
 # Payload CMS
-PAYLOAD_SECRET=your-secret-key-here-change-in-production
-DATABASE_URI=mongodb://localhost:27017/genai
-
-# For MongoDB Atlas (production):
-# DATABASE_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/genai?retryWrites=true&w=majority
+PAYLOAD_SECRET=your-secret-key-at-least-32-characters
+DATABASE_URI=mongodb://localhost:27017/atomtalks
 
 # Next.js
 NEXT_PUBLIC_SERVER_URL=http://localhost:3000
 ```
 
-3. **Start MongoDB (if running locally):**
-
-```bash
-# macOS/Linux
-mongod
-
-# Windows
-"C:\Program Files\MongoDB\Server\<version>\bin\mongod.exe"
-```
-
-4. **Run the development server:**
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to view the website.
-
-5. **Access Payload CMS Admin:**
-
-Navigate to [http://localhost:3000/admin](http://localhost:3000/admin) to access the Payload CMS admin panel.
-
-On first visit, you'll be prompted to create an admin user.
-
-## Project Structure
+## 📁 Project Structure
 
 ```
-nextjs-site/
+atom-talks/
 ├── src/
-│   ├── app/               # Next.js app router pages
-│   │   ├── (payload)/     # Payload CMS routes
-│   │   │   ├── admin/     # Admin panel
-│   │   │   └── api/       # API routes
-│   │   ├── layout.tsx     # Root layout
-│   │   └── page.tsx       # Home page
-│   ├── components/        # React components
-│   └── styles/           # SCSS styles
-├── public/               # Static assets
-│   └── images/          # Images and icons
-├── payload.config.ts    # Payload CMS configuration
-├── next.config.ts       # Next.js configuration
-└── package.json         # Dependencies
+│   ├── app/                    # Next.js app router pages
+│   │   ├── (payload)/          # Payload CMS routes
+│   │   ├── contact/            # Contact page
+│   │   ├── layout.tsx          # Root layout
+│   │   └── page.tsx            # Home page
+│   ├── components/             # React components
+│   │   ├── reactbits/          # ReactBits animation components
+│   │   ├── Hero1.tsx           # Hero section
+│   │   ├── Features1.tsx       # Features grid
+│   │   ├── Pricing1.tsx        # Pricing plans
+│   │   ├── FAQ.tsx             # FAQ accordion
+│   │   ├── Navbar.tsx          # Navigation
+│   │   └── Footer.tsx          # Footer
+│   └── styles/                 # SCSS stylesheets
+├── public/
+│   └── images/                 # Static assets
+├── payload.config.ts           # Payload CMS config
+└── vercel.json                 # Vercel deployment config
 ```
 
-## Payload CMS Collections
+## 🎯 Key Pages
 
-The project includes the following collections:
+- **Home** (`/`) - Landing page with hero, features, pricing, and FAQ
+- **Contact** (`/contact`) - Contact form with animated UI
+- **Admin** (`/admin`) - Payload CMS admin panel
+- **API** (`/api`) - Payload CMS API routes
 
-- **Users**: Admin users with authentication
-- **Pages**: Custom pages with rich text content
-- **Blog Posts**: Blog articles with categories and tags
-- **Use Cases**: Product use case examples
-- **Testimonials**: Customer reviews and testimonials
-- **Pricing Plans**: Pricing tiers and features
+## 🎨 UI/UX Features
 
-## Development
+### Animations
 
-### Available Scripts
+- **Scroll-triggered animations** - Content fades in as you scroll
+- **3D card tilts** - Interactive hover effects on cards
+- **Particle networks** - Animated particles with connection lines
+- **Typewriter text** - Smooth typing animation in hero
+- **Gradient morphing** - Dynamic gradient backgrounds
+- **Shimmer buttons** - Eye-catching button effects
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm start` - Start production server
-- `npm run lint` - Run ESLint
+### Design Elements
 
-### Adding New Pages
+- **Mesh gradients** - Modern, flowing backgrounds
+- **Dot patterns** - Subtle animated textures
+- **Glowing effects** - Cards that glow on hover
+- **Floating elements** - Ambient background animations
+- **Grid overlays** - Sophisticated grid patterns
 
-1. Create a new file in `src/app/[page-name]/page.tsx`
-2. Import necessary components from `src/components/`
-3. Follow the pattern from existing pages like `src/app/page.tsx`
-
-Example:
-
-```tsx
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-
-export default function NewPage() {
-  return (
-    <div className="wrapper d-flex flex-column justify-between">
-      <Navbar dark={true} extraClassList="bg-dark" />
-      
-      <main className="flex-grow-1">
-        {/* Your page content */}
-      </main>
-      
-      <Footer dark={true} extraClassList="bg-striped pt-10 pt-lg-15" />
-    </div>
-  );
-}
-```
-
-### Creating New Components
-
-1. Create a new file in `src/components/ComponentName.tsx`
-2. Define props interface
-3. Export the component
-
-Example:
-
-```tsx
-interface ComponentProps {
-  dark?: boolean;
-  extraClassList?: string;
-}
-
-export default function Component({ dark = false, extraClassList = '' }: ComponentProps) {
-  return (
-    <section className={extraClassList}>
-      {/* Component content */}
-    </section>
-  );
-}
-```
-
-## Deployment
+## 🚀 Deployment
 
 ### Deploy to Vercel
 
-1. **Push your code to GitHub/GitLab/Bitbucket**
+1. **Click the Deploy button** above, or:
 
-2. **Import project in Vercel:**
-   - Go to [vercel.com](https://vercel.com)
-   - Click "Add New Project"
-   - Import your repository
+2. **Manual deployment:**
+   ```bash
+   # Push to GitHub
+   git push origin main
+   
+   # Import to Vercel
+   # Go to vercel.com
+   # Import your repository
+   # Add environment variables
+   # Deploy!
+   ```
 
-3. **Configure environment variables in Vercel:**
-   - `PAYLOAD_SECRET`: A secure random string
-   - `DATABASE_URI`: Your MongoDB Atlas connection string
-   - `NEXT_PUBLIC_SERVER_URL`: Your Vercel deployment URL
+3. **Environment Variables on Vercel:**
+   - `PAYLOAD_SECRET` - Secure random string (32+ chars)
+   - `DATABASE_URI` - MongoDB Atlas connection string
+   - `NEXT_PUBLIC_SERVER_URL` - Your Vercel URL
 
-4. **Deploy:**
-   - Vercel will automatically build and deploy your site
-   - The site will be available at your-project.vercel.app
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
 
-### MongoDB Atlas Setup (for production)
+## 📊 Payload CMS Collections
 
-1. Create a free account at [mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas)
-2. Create a new cluster
-3. Get your connection string
-4. Add it to your Vercel environment variables
+- **Users** - Admin authentication
+- **Pages** - Dynamic pages
+- **Blog Posts** - Article management
+- **Use Cases** - Product use cases
+- **Testimonials** - Customer reviews
+- **Pricing Plans** - Pricing tiers
 
-### Important Notes for Production
+Access the admin panel at `/admin` after deployment.
 
-- Always use a strong, unique `PAYLOAD_SECRET`
-- Use MongoDB Atlas or another managed MongoDB service
-- Enable IP whitelist in MongoDB Atlas (allow all IPs: 0.0.0.0/0 for Vercel)
-- Set up proper CORS if using custom domains
+## 🔧 Development
 
-## Customization
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm start        # Start production server
+npm run lint     # Run ESLint
+```
 
-### Styling
+## 🎨 Customization
 
-- Global styles: `src/styles/globals.scss`
-- Component styles: `src/styles/components/`
-- Bootstrap variables: `src/styles/_variables.scss`
+### Update Content
 
-### Payload CMS
+1. **Via Code:** Edit component files in `src/components/`
+2. **Via CMS:** Use Payload CMS admin at `/admin`
 
-- Configuration: `payload.config.ts`
-- Add new collections by modifying the config file
-- Customize admin panel in the config
+### Modify Styles
 
-### Images
+- **Global styles:** `src/styles/globals.scss`
+- **Variables:** `src/styles/_variables.scss`
+- **Components:** `src/styles/components/`
 
-- Place images in `public/images/`
-- Reference them as `/images/filename.ext` in your code
-- Next.js will automatically optimize images
+### Add ReactBits Components
 
-## Learn More
+All ReactBits components are in `src/components/reactbits/`. To add more:
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Payload CMS Documentation](https://payloadcms.com/docs)
-- [Bootstrap Documentation](https://getbootstrap.com/docs/)
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Vercel Documentation](https://vercel.com/docs)
+1. Visit [reactbits.dev](https://reactbits.dev/)
+2. Copy component code (TypeScript + CSS variant)
+3. Add to `src/components/reactbits/`
+4. Import and use in your pages
 
-## Support
+## 📖 Documentation
 
-For issues and questions:
-- Check the [Next.js GitHub](https://github.com/vercel/next.js)
-- Check the [Payload CMS Disc](https://discord.com/invite/payload)
+- [Quick Start Guide](./QUICK_START.md)
+- [Migration Notes](./MIGRATION_NOTES.md)
+- [Deployment Guide](./DEPLOYMENT.md)
+- [Company Info](./COMPANY_INFO.md)
 
-## License
+## 🌟 Key Features
 
-This project is based on the GenAI HTML template and has been converted to Next.js with Payload CMS integration.
+### Intelligent AI Agent Platform
+
+- **Deploy in 24 Hours** - Production-ready RAG agents
+- **Zero Engineering** - No coding required
+- **Emotional Intelligence** - 53-point emotion detection
+- **Voice + Chat** - Dual-interface support
+- **Dual Persona** - Sales and support in one agent
+
+## 🤝 Contributing
+
+This is a proprietary project for AtomTalks. For questions or support, contact hello@atomtalks.com.
+
+## 📄 License
+
+Proprietary - All rights reserved AtomTalks © 2025
+
+## 🔗 Links
+
+- **Website:** http://localhost:3000 (local dev)
+- **GitHub:** https://github.com/PaulWallaceATL/atom-talks
+- **ReactBits:** https://reactbits.dev/
+
+## 💻 Built With
+
+- [Next.js](https://nextjs.org/)
+- [Payload CMS](https://payloadcms.com/)
+- [ReactBits](https://reactbits.dev/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Bootstrap](https://getbootstrap.com/)
+- [MongoDB](https://www.mongodb.com/)
+
+---
+
+**Made with ❤️ by the AtomTalks team**
