@@ -111,8 +111,11 @@ $spacers: (
 	40: $spacer * 10.25,
 );
 
-// Container
-$container-padding-x: 1rem;
+// Grid columns
+$grid-gutter-width: 1.5rem;
+
+// Container - use grid gutter for proper centering
+$container-padding-x: $grid-gutter-width;
 $container-max-widths: (
 	sm: 540px,
 	md: 720px,
@@ -120,9 +123,6 @@ $container-max-widths: (
 	xl: 1140px,
 	xxl: 1320px,
 );
-
-// Grid columns
-$grid-gutter-width: 2rem;
 
 // Enhanced Typography System
 $font-family-sans-serif: "Space Grotesk", system-ui, -apple-system, Arial, sans-serif, "Apple Color Emoji",
