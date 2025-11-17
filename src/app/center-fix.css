@@ -1,19 +1,9 @@
 /* EMERGENCY CENTER FIX - Load this last to override everything */
 
+/* Center all containers */
 .hero-section .container,
 .container {
   text-align: center !important;
-}
-
-.hero-section .row,
-.row {
-  display: flex;
-  justify-content: center !important;
-  align-items: center;
-  margin: 0 auto !important;
-}
-
-.container {
   max-width: 1320px !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -26,5 +16,35 @@
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
   }
+}
+
+/* Center all rows */
+.hero-section .row,
+.row {
+  display: flex;
+  justify-content: center !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Center button groups */
+.d-flex.gap-4.justify-content-center,
+.d-flex.justify-content-center {
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Fix nav indicator centering */
+.nav-link {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+
+.nav-link span[style*="position: absolute"] {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
 }
 
