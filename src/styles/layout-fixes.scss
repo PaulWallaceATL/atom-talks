@@ -1,41 +1,81 @@
 // Layout fixes for Next.js version
 
-// Ensure proper body layout
-html, body {
+// Ensure proper body layout - CRITICAL FOR CENTERING
+html {
   margin: 0;
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-// Add padding to body to account for fixed navbar
 body {
+  margin: 0;
+  padding: 0;
   padding-top: 80px; // Height of navbar
+  width: 100%;
+  overflow-x: hidden;
   
   @media (min-width: 992px) {
     padding-top: 90px;
   }
 }
 
-// Fix wrapper to prevent left alignment
+// Ensure all elements use border-box
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+// Fix wrapper to ensure proper centering
 .wrapper {
   width: 100%;
+  max-width: 100vw;
   margin: 0 auto;
   overflow-x: hidden;
 }
 
-// Ensure navbar stays on top
-.navbar.fixed-top {
-  z-index: 1030;
+// Ensure containers are properly centered
+.container,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+// Ensure navbar is properly positioned and centered
+.navbar {
   width: 100%;
-  left: 0;
-  right: 0;
+  max-width: 100vw;
+  margin: 0 auto;
+  
+  &.fixed-top {
+    z-index: 1030;
+    left: 0;
+    right: 0;
+  }
+  
+  .container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
 
 // Adjust hero sections to not be hidden behind navbar
 .hero-section {
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: 100vw;
+}
+
+// Ensure sections are properly centered
+section {
+  width: 100%;
+  max-width: 100vw;
 }
 
 // Smooth page transitions
