@@ -38,11 +38,93 @@ function useCounter(end: number, duration: number = 2000, shouldStart: boolean =
   return count;
 }
 
+// Individual stat card component to use hooks properly
+function StatCard({ 
+  stat, 
+  index, 
+  isVisible 
+}: { 
+  stat: { value: number; suffix: string; label: string; icon: string; color: string }; 
+  index: number; 
+  isVisible: boolean;
+}) {
+  const count = useCounter(stat.value, 2000, isVisible);
+  
+  return (
+    <div className="col-6 col-lg-3">
+      <FadeInSection delay={index * 0.1}>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          whileHover={{ y: -8, scale: 1.05 }}
+          className="glass-card-premium p-6 p-lg-8 text-center h-100"
+        >
+          {/* Icon */}
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 260, 
+              damping: 20,
+              delay: 0.2 + index * 0.1 
+            }}
+            className="mb-4"
+            style={{ fontSize: '2.5rem' }}
+          >
+            {stat.icon}
+          </motion.div>
+
+          {/* Number */}
+          <div className="mb-2">
+            <motion.h2
+              className="fw-bold mb-0 gradient-text"
+              style={{ 
+                fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+                letterSpacing: '-0.03em',
+                lineHeight: 1,
+              }}
+            >
+              {count}{stat.suffix}
+            </motion.h2>
+          </div>
+
+          {/* Label */}
+          <p 
+            className="text-white-50 mb-0 fw-medium"
+            style={{ fontSize: '0.95rem' }}
+          >
+            {stat.label}
+          </p>
+
+          {/* Decorative gradient line */}
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: '60%' }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5 + index * 0.1 }}
+            style={{
+              height: '3px',
+              background: `linear-gradient(90deg, transparent, ${stat.color}, transparent)`,
+              margin: '1.5rem auto 0',
+              borderRadius: '2px',
+            }}
+          />
+        </motion.div>
+      </FadeInSection>
+    </div>
+  );
+}
+
 export default function Stats({ dark = true, extraClassList = '' }: StatsProps) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentRef = sectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -52,13 +134,13 @@ export default function Stats({ dark = true, extraClassList = '' }: StatsProps) 
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -123,77 +205,9 @@ export default function Stats({ dark = true, extraClassList = '' }: StatsProps) 
         </FadeInSection>
 
         <div className="row g-6 g-lg-8">
-          {stats.map((stat, index) => {
-            const count = useCounter(stat.value, 2000, isVisible);
-            
-            return (
-              <div key={index} className="col-6 col-lg-3">
-                <FadeInSection delay={index * 0.1}>
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ y: -8, scale: 1.05 }}
-                    className="glass-card-premium p-6 p-lg-8 text-center h-100"
-                  >
-                    {/* Icon */}
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ 
-                        type: "spring", 
-                        stiffness: 260, 
-                        damping: 20,
-                        delay: 0.2 + index * 0.1 
-                      }}
-                      className="mb-4"
-                      style={{ fontSize: '2.5rem' }}
-                    >
-                      {stat.icon}
-                    </motion.div>
-
-                    {/* Number */}
-                    <div className="mb-2">
-                      <motion.h2
-                        className="fw-bold mb-0 gradient-text"
-                        style={{ 
-                          fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
-                          letterSpacing: '-0.03em',
-                          lineHeight: 1,
-                        }}
-                      >
-                        {count}{stat.suffix}
-                      </motion.h2>
-                    </div>
-
-                    {/* Label */}
-                    <p 
-                      className="text-white-50 mb-0 fw-medium"
-                      style={{ fontSize: '0.95rem' }}
-                    >
-                      {stat.label}
-                    </p>
-
-                    {/* Decorative gradient line */}
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: '60%' }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: 0.5 + index * 0.1 }}
-                      style={{
-                        height: '3px',
-                        background: `linear-gradient(90deg, transparent, ${stat.color}, transparent)`,
-                        margin: '1.5rem auto 0',
-                        borderRadius: '2px',
-                      }}
-                    />
-                  </motion.div>
-                </FadeInSection>
-              </div>
-            );
-          })}
+          {stats.map((stat, index) => (
+            <StatCard key={index} stat={stat} index={index} isVisible={isVisible} />
+          ))}
         </div>
 
         {/* Bottom CTA */}
