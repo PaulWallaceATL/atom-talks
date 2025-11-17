@@ -32,7 +32,7 @@
 			width: 100%;
 			height: 2px;
 			border-radius: 100px;
-			background: $primary;
+			background: $primary-dark; // Yellow for visibility
 			transition: $transition-base;
 			transform: rotate(0);
 			transform-origin: center;
@@ -69,6 +69,20 @@
 					top: 50%;
 					transform: rotate(45deg);
 				}
+			}
+		}
+	}
+}
+
+// Ensure hamburger menu is visible on mobile
+@media (max-width: 991.98px) {
+	.navbar-toggler {
+		display: inline-block;
+		z-index: 1001;
+		
+		.navbar-toggler-icon {
+			span {
+				background: $primary-dark; // Yellow bars
 			}
 		}
 	}

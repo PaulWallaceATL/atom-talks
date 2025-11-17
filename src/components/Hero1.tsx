@@ -15,24 +15,16 @@ interface Hero1Props {
 export default function Hero1({ dark = true, extraClassList = '' }: Hero1Props) {
   return (
     <section 
-      className={`hero-section style-1 position-relative ${extraClassList}`}
+      className={`hero-section style-1 overflow-hidden position-relative ${extraClassList}`}
       data-bs-theme={dark ? 'dark' : undefined}
-      style={{ 
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        paddingTop: '80px',
-        paddingBottom: '60px',
-        overflowX: 'hidden'
-      }}
     >
       {/* ReactBits Animated Backgrounds */}
       <ParticlesBackground />
       <FloatingElements />
       
-      <div className="container position-relative" style={{ zIndex: 1, width: '100%', maxWidth: '100%' }}>
-        <div className="row justify-content-center" style={{ margin: '0 -0.75rem' }}>
-          <div className="col-12 col-lg-10 col-xl-9" style={{ padding: '0 0.75rem' }}>
+      <div className="container position-relative" style={{ zIndex: 1 }}>
+        <div className="row justify-content-center">
+          <div className="col-lg-10 col-xl-9">
             <div className="text-center">
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}

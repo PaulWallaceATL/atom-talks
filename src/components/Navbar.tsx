@@ -47,18 +47,15 @@ export default function Navbar({ dark = true, extraClassList = '' }: NavbarProps
 
   return (
     <motion.nav 
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
       className={`navbar navbar-expand-lg fixed-top ${extraClassList} ${isScrolled ? 'navbar-scrolled glass-dark' : ''}`}
       data-bs-theme={dark ? 'dark' : undefined}
       style={{
         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
         padding: isScrolled ? '0.75rem 0' : '1rem 0',
         borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.1)' : 'none',
-        zIndex: 1050,
-        background: 'rgba(2, 6, 23, 0.95)',
-        backdropFilter: 'blur(12px)',
       }}
     >
       <div className="container">

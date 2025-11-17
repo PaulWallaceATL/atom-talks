@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     siteName: 'AtomTalks',
     images: [
       {
-        url: '/images/logo-atomtalks.svg',
+        url: '/images/screens/screen-1.jpg',
         width: 1200,
         height: 630,
-        alt: 'AtomTalks - AI Agent Platform',
+        alt: 'AtomTalks AI Agent Dashboard - Emotional Intelligence and RAG Platform',
       },
     ],
     locale: 'en_US',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AtomTalks - AI Agent Platform | Deploy RAG Agents in 24 Hours',
     description: 'Turn your website and docs into an intelligent AI agent with emotional intelligence. Deploy in 24 hours, no engineering required.',
-    images: ['/images/logo-atomtalks.svg'],
+    images: ['/images/screens/screen-1.jpg'],
   },
 };
 
