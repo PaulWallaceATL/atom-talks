@@ -1,5 +1,13 @@
 // Layout fixes for Next.js version
 
+// Ensure proper body layout
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 // Add padding to body to account for fixed navbar
 body {
   padding-top: 80px; // Height of navbar
@@ -9,9 +17,19 @@ body {
   }
 }
 
+// Fix wrapper to prevent left alignment
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
 // Ensure navbar stays on top
 .navbar.fixed-top {
   z-index: 1030;
+  width: 100%;
+  left: 0;
+  right: 0;
 }
 
 // Adjust hero sections to not be hidden behind navbar
