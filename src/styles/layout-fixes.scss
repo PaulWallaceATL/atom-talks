@@ -78,6 +78,23 @@ section {
   max-width: 100vw;
 }
 
+// Fix row centering - critical fix
+.row {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  
+  &.justify-center {
+    justify-content: center !important;
+  }
+}
+
+// Ensure all column content is properly aligned
+.col,
+[class*="col-"] {
+  padding-left: calc(var(--gen-gutter-x, 1rem) * 0.5);
+  padding-right: calc(var(--gen-gutter-x, 1rem) * 0.5);
+}
+
 // Smooth page transitions
 .page-transition {
   animation: pageTransition 0.3s ease-in-out;
