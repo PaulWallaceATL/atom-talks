@@ -86,7 +86,7 @@ export default function ContactPage() {
                 </motion.div>
                 
                 <h1 className="text-white mb-4 display-4">
-                  Let's Build Your <span className="text-gradient-2">AI Agent</span> Together
+                  Let&apos;s Build Your <span className="text-gradient-2">AI Agent</span> Together
                 </h1>
                 <p className="fs-5 mb-0 text-white-75">
                   Questions about deployment? Ready to get started? We&apos;re here to help you launch in 24 hours.
