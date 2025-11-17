@@ -1,0 +1,308 @@
+/* =============================================
+   CRITICAL FIXES FOR NAVBAR & SCROLL ISSUES
+   ============================================= */
+
+/* Fix navbar visibility and z-index */
+.navbar.fixed-top {
+  z-index: 1050 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: rgba(2, 6, 23, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* Ensure navbar is visible on load */
+.navbar-brand,
+.navbar-toggler {
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 1051 !important;
+}
+
+/* Fix logo visibility */
+.navbar-logo {
+  display: block !important;
+  max-width: 140px !important;
+  height: auto !important;
+}
+
+/* Fix hamburger menu visibility */
+.navbar-toggler {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  cursor: pointer !important;
+}
+
+.navbar-toggler-icon span {
+  display: block !important;
+  width: 24px !important;
+  height: 2px !important;
+  background: #facc15 !important;
+  margin: 4px 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Fix scroll locking issues */
+body {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+body.menu-open {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+}
+
+html {
+  overflow-x: hidden !important;
+  scroll-behavior: smooth !important;
+}
+
+/* Fix section heights - prevent weird small sizes */
+section {
+  min-height: auto !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.hero-section {
+  min-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  padding-top: 80px !important;
+  padding-bottom: 60px !important;
+}
+
+/* Fix container constraints */
+.container {
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  overflow-x: hidden !important;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px !important;
+}
+
+/* Fix row and col sizing */
+.row {
+  margin-left: -0.75rem !important;
+  margin-right: -0.75rem !important;
+  width: auto !important;
+}
+
+.row > * {
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Fix image sizing */
+img,
+.img-fluid {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Fix card sizing */
+.card,
+.glass-card,
+.glass-card-premium,
+.feature-card-modern {
+  width: 100% !important;
+  min-height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Fix pricing cards */
+.pricing-card,
+.pricing-card-premium {
+  width: 100% !important;
+  min-height: 400px !important;
+}
+
+/* Prevent content from being cut off */
+* {
+  box-sizing: border-box !important;
+}
+
+/* Fix mobile menu z-index */
+.mobile-menu,
+.mobile-menu-backdrop {
+  z-index: 9999 !important;
+}
+
+.mobile-menu-backdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+.mobile-menu {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 85% !important;
+  max-width: 400px !important;
+}
+
+/* Fix wrapper and main content */
+.wrapper {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow-x: hidden !important;
+}
+
+main {
+  flex: 1 !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix sticky scroll sections */
+.position-sticky,
+.sticky-top {
+  position: relative !important;
+}
+
+@media (min-width: 992px) {
+  .position-sticky,
+  .sticky-top {
+    position: sticky !important;
+  }
+}
+
+/* Fix framer-motion initial states causing invisibility */
+[style*="opacity: 0"] {
+  animation: fadeInFix 0.1s ease-in forwards !important;
+}
+
+@keyframes fadeInFix {
+  to {
+    opacity: 1 !important;
+  }
+}
+
+/* Prevent transform issues */
+.navbar,
+.navbar-brand,
+.navbar-toggler,
+.navbar-nav {
+  transform: none !important;
+  will-change: auto !important;
+}
+
+/* Fix any hidden overflow issues */
+.overflow-hidden {
+  overflow: visible !important;
+}
+
+section.overflow-hidden {
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+}
+
+/* Mobile specific fixes */
+@media (max-width: 991.98px) {
+  /* Ensure navbar is always visible */
+  .navbar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Fix hero height on mobile */
+  .hero-section {
+    min-height: auto !important;
+    padding-top: 100px !important;
+    padding-bottom: 40px !important;
+  }
+  
+  /* Better section spacing */
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  /* Fix grid columns */
+  .col,
+  [class*="col-"] {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Fix button sizing */
+  .btn {
+    min-width: 120px !important;
+    padding: 0.75rem 1.5rem !important;
+  }
+}
+
+/* Ensure footer visibility */
+footer {
+  width: 100% !important;
+  margin-top: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix any transform issues causing invisibility */
+* {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Reset any problematic animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+

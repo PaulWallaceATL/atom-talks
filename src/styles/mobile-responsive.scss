@@ -403,12 +403,14 @@
 @media (max-width: 991.98px) {
   // Prevent horizontal overflow
   .row {
-    margin-left: -0.75rem !important;
-    margin-right: -0.75rem !important;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    width: auto;
 
     > * {
-      padding-left: 0.75rem !important;
-      padding-right: 0.75rem !important;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      max-width: 100%;
     }
   }
 
@@ -417,10 +419,12 @@
   .col-lg-9,
   .col-lg-8,
   .col-lg-7,
-  .col-lg-6 {
-    width: 100% !important;
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
+  .col-lg-6,
+  .col-xl-9,
+  .col-xl-8 {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 

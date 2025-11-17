@@ -23,3 +23,6 @@ Description: AI Content Writing & Copywriting Landing Page
 @import './mobile-responsive.scss';
 @import './mobile-utilities.scss';
 
+// CRITICAL FIXES - Must be absolute last
+@import './critical-fixes.scss';
+
