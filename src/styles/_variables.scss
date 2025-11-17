@@ -1,31 +1,53 @@
 /* 
 ============================================
-Colors
+Colors - Enhanced Professional Palette
 ============================================
 */
 $white: #fff;
 $black: #000;
 
-// Blue
-$theme-blue: #6a4dff;
-$theme-yellow: #e6f85e;
+// Enhanced Blue Palette
+$theme-blue: #6366f1;
+$theme-blue-light: #818cf8;
+$theme-blue-lighter: #a5b4fc;
+$theme-yellow: #facc15;
+$theme-yellow-bright: #fde047;
 
-$theme-blue-1: #f3f8ff;
-$theme-blue-2: #eae6ff;
-$theme-blue-3: #bdbfd4;
-$theme-blue-4: #c3d1e3;
-$theme-blue-5: #b7a9ff;
-$theme-blue-6: #747694;
+$theme-blue-1: #f0f9ff;
+$theme-blue-2: #e0e7ff;
+$theme-blue-3: #c7d2fe;
+$theme-blue-4: #a5b4fc;
+$theme-blue-5: #818cf8;
+$theme-blue-6: #6366f1;
 
-$theme-dark-1: #2e2f45;
-$theme-dark-2: #262838;
-$theme-dark-3: #191a28;
-$theme-dark-4: #171825;
-$theme-dark-5: #11121c;
+// Enhanced Dark Palette
+$theme-dark-1: #1e1b4b;
+$theme-dark-2: #1e293b;
+$theme-dark-3: #0f172a;
+$theme-dark-4: #0a0e1e;
+$theme-dark-5: #020617;
 
-$gradient-1: linear-gradient(92.73deg, #b324d7 7.07%, #fe577f 97.81%);
-$gradient-2: linear-gradient(90.22deg, #58ebff 0.19%, #e6f85e 101.84%);
-$gradient-3: linear-gradient(270deg, rgba(50, 51, 55, 0.4) 50%, rgba(70, 79, 111, 0.2) 100%);
+// Accent Colors
+$accent-purple: #a855f7;
+$accent-pink: #ec4899;
+$accent-cyan: #06b6d4;
+$accent-emerald: #10b981;
+$accent-orange: #f97316;
+
+// Enhanced Gradients
+$gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+$gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+$gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+$gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+$gradient-premium: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+$gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+$gradient-mesh: radial-gradient(at 40% 20%, hsla(235, 94%, 68%, 0.2) 0px, transparent 50%),
+  radial-gradient(at 80% 0%, hsla(189, 90%, 56%, 0.2) 0px, transparent 50%),
+  radial-gradient(at 0% 50%, hsla(282, 85%, 65%, 0.2) 0px, transparent 50%),
+  radial-gradient(at 80% 50%, hsla(340, 100%, 76%, 0.2) 0px, transparent 50%),
+  radial-gradient(at 0% 100%, hsla(189, 100%, 56%, 0.2) 0px, transparent 50%),
+  radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 0.2) 0px, transparent 50%);
 
 // Theme colors
 $primary: $theme-blue;
@@ -102,33 +124,43 @@ $container-max-widths: (
 // Grid columns
 $grid-gutter-width: 2rem;
 
-// Font
+// Enhanced Typography System
 $font-family-sans-serif: "Space Grotesk", system-ui, -apple-system, Arial, sans-serif, "Apple Color Emoji",
 	"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-size-base: 1rem;
+$font-size-sm: 0.875rem;
 $font-size-lg: $font-size-base * 1.125;
-$h1-font-size: clamp(2.25rem, 1.7143rem + 1.7143vw, 3rem);
-$h2-font-size: clamp(2rem, 1.6429rem + 1.1429vw, 2.5rem);
-$h3-font-size: clamp(1.75rem, 1.5714rem + 0.5714vw, 2rem);
-$h4-font-size: 1.5rem;
+$font-size-xl: $font-size-base * 1.25;
+
+// Enhanced heading scale with better fluid typography
+$h1-font-size: clamp(2.5rem, 2rem + 2.5vw, 4rem);
+$h2-font-size: clamp(2rem, 1.75rem + 1.5vw, 3rem);
+$h3-font-size: clamp(1.75rem, 1.5rem + 1vw, 2.25rem);
+$h4-font-size: clamp(1.5rem, 1.25rem + 0.5vw, 1.875rem);
 $h5-font-size: 1.25rem;
 $h6-font-size: 1.125rem;
 
-// headings-variables
-$headings-font-weight: 600;
-$headings-line-height: 1.25;
+// Headings variables - Enhanced
+$headings-font-weight: 700;
+$headings-line-height: 1.2;
+$headings-letter-spacing: -0.02em;
+
+// Body text
+$body-line-height: 1.7;
+$paragraph-margin-bottom: 1.25rem;
 
 // Input
 $input-color: var(--#{$prefix}emphasis-color);
 $input-focus-border-color: $primary;
 $input-focus-box-shadow: none;
 
-// Border radius
-$border-radius: 0.5rem;
-$border-radius-sm: 0.25rem;
-$border-radius-lg: 0.75rem;
-$border-radius-xl: 1rem;
-$border-radius-xxl: 1.25rem;
+// Enhanced Border radius
+$border-radius: 0.75rem;
+$border-radius-sm: 0.5rem;
+$border-radius-lg: 1rem;
+$border-radius-xl: 1.5rem;
+$border-radius-xxl: 2rem;
+$border-radius-pill: 50rem;
 
 // Input + button
 $input-btn-padding-y: 0.75rem;
@@ -138,11 +170,27 @@ $input-btn-padding-x-sm: 1.25rem;
 $input-btn-padding-y-lg: 1rem;
 $input-btn-padding-x-lg: 2rem;
 
-// Button
-$btn-font-weight: 500;
+// Enhanced Button Variables
+$btn-font-weight: 600;
+$btn-border-width: 2px;
+$btn-box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+$btn-hover-box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+$btn-active-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
-// Transition
+// Enhanced Transitions
 $transition-fast: all 0.15s ease-in-out;
+$transition-base: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// Enhanced Shadows
+$box-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+$box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$box-shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$box-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$box-shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+$box-shadow-glow: 0 0 20px rgba(99, 102, 241, 0.4);
+$box-shadow-glow-strong: 0 0 40px rgba(99, 102, 241, 0.6);
 
 // Navbar
 $navbar-padding-y: $spacer * 1;

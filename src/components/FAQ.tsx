@@ -48,53 +48,117 @@ export default function FAQ({ dark = true, extraClassList = '' }: FAQProps) {
     <section className={`position-relative ${extraClassList}`}>
       <div className="container">
         <FadeInSection>
-          <div className="row justify-center mb-18">
+          <div className="row justify-center mb-16">
             <div className="col-lg-10">
               <div className="text-center">
-                <h1 className={`mb-0 ${dark ? 'text-white' : ''}`}>
-                  Questions About Our <span className={`text-${dark ? 'primary-dark' : 'primary'}`}>AI Agent Platform</span>?
-                  <br className="d-none d-md-block" />
-                  We Have Answers!
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <span className="badge-premium mb-4 d-inline-block">
+                    ❓ FAQ
+                  </span>
+                </motion.div>
+                <h1 
+                  className={`mb-4 ${dark ? 'text-white' : ''}`}
+                  style={{ fontWeight: 800, letterSpacing: '-0.02em' }}
+                >
+                  Questions About Our <span className="gradient-text">AI Agent Platform</span>?
                 </h1>
+                <p className="text-white-50 fs-5">
+                  Everything you need to know about deploying intelligent AI agents
+                </p>
               </div>
             </div>
           </div>
         </FadeInSection>
 
         <div className="row justify-center">
-          <div className="col-lg-8">
-            <div className="accordion accordion-flush d-flex flex-column gap-6" id="faqAccordion">
+          <div className="col-lg-9">
+            <div className="d-flex flex-column gap-4">
               {faqs.map((faq, index) => (
-                <FadeInSection key={faq.id} delay={index * 0.1}>
+                <FadeInSection key={faq.id} delay={index * 0.08}>
                   <motion.div 
-                    className="accordion-item"
-                    whileHover={{ scale: 1.01 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.08 }}
+                    className="glass-card p-1"
+                    style={{ borderRadius: '1.25rem' }}
                   >
-                    <h2 className="accordion-header">
+                    <motion.div
+                      whileHover={{ scale: 1.01 }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    >
                       <button
-                        className={`accordion-button ${openIndex !== index ? 'collapsed' : ''}`}
+                        className={`w-100 text-start p-5 border-0 bg-transparent d-flex align-items-center justify-content-between ${dark ? 'text-white' : 'text-dark'}`}
                         type="button"
                         onClick={() => toggleFAQ(index)}
                         aria-expanded={openIndex === index}
+                        style={{
+                          cursor: 'pointer',
+                          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        }}
                       >
-                        <span className="icon"></span>
-                        {faq.question}
-                      </button>
-                    </h2>
-                    <AnimatePresence>
-                      {openIndex === index && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="accordion-collapse"
+                        <span 
+                          className="fw-bold flex-grow-1 pe-4"
+                          style={{ fontSize: '1.15rem' }}
                         >
-                          <div className="accordion-body">{faq.answer}</div>
+                          {faq.question}
+                        </span>
+                        <motion.div
+                          animate={{ rotate: openIndex === index ? 180 : 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="flex-shrink-0"
+                          style={{
+                            width: '2rem',
+                            height: '2rem',
+                            borderRadius: '50%',
+                            background: 'linear-gradient(135deg, #667eea, #764ba2)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                          }}
+                        >
+                          <svg 
+                            width="16" 
+                            height="16" 
+                            viewBox="0 0 16 16" 
+                            fill="none"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <polyline points="4 6 8 10 12 6" />
+                          </svg>
                         </motion.div>
-                      )}
-                    </AnimatePresence>
+                      </button>
+                      
+                      <AnimatePresence>
+                        {openIndex === index && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                            style={{ overflow: 'hidden' }}
+                          >
+                            <div 
+                              className="px-5 pb-5 text-white-50"
+                              style={{ 
+                                fontSize: '1.05rem',
+                                lineHeight: 1.7,
+                              }}
+                            >
+                              {faq.answer}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
                   </motion.div>
                 </FadeInSection>
               ))}

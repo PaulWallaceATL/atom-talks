@@ -3,6 +3,7 @@ import Hero1 from '@/components/Hero1';
 import Features1 from '@/components/Features1';
 import Features2 from '@/components/Features2';
 import Features3 from '@/components/Features3';
+import Stats from '@/components/Stats';
 import Pricing1 from '@/components/Pricing1';
 import FAQ from '@/components/FAQ';
 import CTA1 from '@/components/CTA1';
@@ -33,6 +34,9 @@ export default function HomePage() {
 
         {/* Core Features - 7 Value Props */}
         <Features1 dark={true} extraClassList="bg-dark-blue-4" />
+
+        {/* Stats Section */}
+        <Stats dark={true} extraClassList="bg-dark" />
 
         {/* Support Reduction Feature */}
         <Features3 dark={true} />
