@@ -1,0 +1,14 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "env": {
+    "PAYLOAD_SECRET": "@payload_secret",
+    "DATABASE_URI": "@database_uri",
+    "NEXT_PUBLIC_SERVER_URL": "@next_public_server_url"
+  }
+}
+

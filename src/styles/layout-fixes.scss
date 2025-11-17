@@ -1,0 +1,36 @@
+// Layout fixes for Next.js version
+
+// Add padding to body to account for fixed navbar
+body {
+  padding-top: 80px; // Height of navbar
+  
+  @media (min-width: 992px) {
+    padding-top: 90px;
+  }
+}
+
+// Ensure navbar stays on top
+.navbar.fixed-top {
+  z-index: 1030;
+}
+
+// Adjust hero sections to not be hidden behind navbar
+.hero-section {
+  position: relative;
+  z-index: 1;
+}
+
+// Smooth page transitions
+.page-transition {
+  animation: pageTransition 0.3s ease-in-out;
+}
+
+@keyframes pageTransition {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
