@@ -3,23 +3,18 @@
 import { motion } from 'framer-motion';
 
 export default function FloatingElements() {
-  const floatingVariants = {
-    animate: {
-      y: [0, -20, 0],
-      rotate: [0, 5, 0, -5, 0],
-      transition: {
-        duration: 6,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      },
-    },
-  };
-
   return (
     <div className="floating-elements" style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden' }}>
       <motion.div
-        variants={floatingVariants}
-        animate="animate"
+        animate={{
+          y: [0, -20, 0],
+          rotate: [0, 5, 0, -5, 0],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
         style={{
           position: 'absolute',
           top: '10%',
@@ -32,8 +27,16 @@ export default function FloatingElements() {
         }}
       />
       <motion.div
-        variants={floatingVariants}
-        animate="animate"
+        animate={{
+          y: [0, -20, 0],
+          rotate: [0, 5, 0, -5, 0],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: 'easeInOut',
+          delay: 2,
+        }}
         style={{
           position: 'absolute',
           top: '60%',
@@ -43,12 +46,19 @@ export default function FloatingElements() {
           borderRadius: '50%',
           background: 'radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent)',
           filter: 'blur(50px)',
-          animationDelay: '2s',
         }}
       />
       <motion.div
-        variants={floatingVariants}
-        animate="animate"
+        animate={{
+          y: [0, -20, 0],
+          rotate: [0, 5, 0, -5, 0],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: 'easeInOut',
+          delay: 4,
+        }}
         style={{
           position: 'absolute',
           bottom: '20%',
@@ -58,10 +68,8 @@ export default function FloatingElements() {
           borderRadius: '50%',
           background: 'radial-gradient(circle, rgba(59, 130, 246, 0.1), transparent)',
           filter: 'blur(30px)',
-          animationDelay: '4s',
         }}
       />
     </div>
   );
 }
-

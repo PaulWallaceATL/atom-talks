@@ -89,7 +89,7 @@ export default function ContactPage() {
                   Let's Build Your <span className="text-gradient-2">AI Agent</span> Together
                 </h1>
                 <p className="fs-5 mb-0 text-white-75">
-                  Questions about deployment? Ready to get started? We're here to help you launch in 24 hours.
+                  Questions about deployment? Ready to get started? We&apos;re here to help you launch in 24 hours.
                 </p>
               </div>
             </FadeInSection>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <strong>Message Sent Successfully!</strong> We'll get back to you within 24 hours.
+                      <strong>Message Sent Successfully!</strong> We&apos;ll get back to you within 24 hours.
                     </div>
                   </motion.div>
                 )}

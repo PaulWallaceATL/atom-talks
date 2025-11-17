@@ -40,7 +40,7 @@ export default function ForgotPasswordPage() {
                     required
                   />
                   <div className="form-text">
-                    We'll send you a link to reset your password
+                    We&apos;ll send you a link to reset your password
                   </div>
                 </div>
 

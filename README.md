@@ -2,25 +2,24 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FPaulWallaceATL%2Fatom-talks)
 
-A modern AI Agent platform built with Next.js 15, TypeScript, Payload CMS, and enhanced with [ReactBits](https://reactbits.dev/) animations.
+A modern AI Agent platform landing page built with Next.js 15, TypeScript, and enhanced with [ReactBits](https://reactbits.dev/) animations.
 
 ## 🚀 Features
 
 - ✅ **Next.js 15** with App Router for optimal performance
 - ✅ **TypeScript** for type safety
-- ✅ **Payload CMS** for headless content management
 - ✅ **ReactBits Animations** - Beautiful, interactive UI components
 - ✅ **Framer Motion** for smooth animations
 - ✅ **Bootstrap 5** for responsive design
 - ✅ **SCSS** for powerful styling
-- ✅ **MongoDB** integration for data storage
+- ✅ **100% Static** - No database required!
 - ✅ **SEO Optimized** with proper metadata
 - ✅ **Dark Mode** native support
-- ✅ **Vercel Ready** - Deploy in minutes
+- ✅ **Vercel Ready** - Deploy in 60 seconds
 
 ## 🎨 ReactBits Components
 
-The site features premium animations from ReactBits including:
+The site features premium animations from [ReactBits](https://reactbits.dev/) including:
 
 - **ParticlesBackground** - Connected particle networks
 - **FloatingElements** - Ambient gradient orbs
@@ -40,17 +39,10 @@ The site features premium animations from ReactBits including:
 - **Language:** TypeScript 5
 - **Styling:** Bootstrap 5.3 + SCSS + Custom Animations
 - **Animations:** Framer Motion + ReactBits
-- **CMS:** Payload CMS 3.x
-- **Database:** MongoDB
 - **Deployment:** Vercel
 - **Package Manager:** npm
 
 ## 🏃 Quick Start
-
-### Prerequisites
-
-- Node.js 18 or higher
-- MongoDB (local or MongoDB Atlas)
 
 ### Installation
 
@@ -62,31 +54,15 @@ cd atom-talks
 # Install dependencies
 npm install
 
-# Set up environment variables
-cp .env.example .env.local
-# Edit .env.local with your values
-
-# Start MongoDB (if running locally)
-mongod
-
 # Run development server
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Environment Variables
+### That's It! No Database Setup Required 🎉
 
-Create a `.env.local` file:
-
-```env
-# Payload CMS
-PAYLOAD_SECRET=your-secret-key-at-least-32-characters
-DATABASE_URI=mongodb://localhost:27017/atomtalks
-
-# Next.js
-NEXT_PUBLIC_SERVER_URL=http://localhost:3000
-```
+This is a fully static site - no MongoDB, no backend, just beautiful Next.js pages.
 
 ## 📁 Project Structure
 
@@ -94,7 +70,6 @@ NEXT_PUBLIC_SERVER_URL=http://localhost:3000
 atom-talks/
 ├── src/
 │   ├── app/                    # Next.js app router pages
-│   │   ├── (payload)/          # Payload CMS routes
 │   │   ├── contact/            # Contact page
 │   │   ├── layout.tsx          # Root layout
 │   │   └── page.tsx            # Home page
@@ -107,18 +82,14 @@ atom-talks/
 │   │   ├── Navbar.tsx          # Navigation
 │   │   └── Footer.tsx          # Footer
 │   └── styles/                 # SCSS stylesheets
-├── public/
-│   └── images/                 # Static assets
-├── payload.config.ts           # Payload CMS config
-└── vercel.json                 # Vercel deployment config
+└── public/
+    └── images/                 # Static assets
 ```
 
-## 🎯 Key Pages
+## 🎯 Pages
 
 - **Home** (`/`) - Landing page with hero, features, pricing, and FAQ
 - **Contact** (`/contact`) - Contact form with animated UI
-- **Admin** (`/admin`) - Payload CMS admin panel
-- **API** (`/api`) - Payload CMS API routes
 
 ## 🎨 UI/UX Features
 
@@ -139,48 +110,52 @@ atom-talks/
 - **Floating elements** - Ambient background animations
 - **Grid overlays** - Sophisticated grid patterns
 
-## 🚀 Deployment
+## 🚀 Deploy to Vercel (60 Seconds!)
 
-### Deploy to Vercel
+### Option 1: One-Click Deploy
 
-1. **Click the Deploy button** above, or:
+Click the "Deploy with Vercel" button above.
 
-2. **Manual deployment:**
-   ```bash
-   # Push to GitHub
-   git push origin main
+### Option 2: Manual Deploy
+
+1. **Push to GitHub** (already done ✅)
+
+2. **Import to Vercel:**
+   - Go to [vercel.com](https://vercel.com)
+   - Click "Add New Project"
+   - Import `PaulWallaceATL/atom-talks`
+   - Choose a project name (e.g., `atomtalks-platform`)
+
+3. **Configure (Optional):**
+   - Framework: Next.js (auto-detected)
+   - Build Command: `npm run build`
+   - Output Directory: `.next`
+   - Install Command: `npm install`
+
+4. **Environment Variables:**
    
-   # Import to Vercel
-   # Go to vercel.com
-   # Import your repository
-   # Add environment variables
-   # Deploy!
+   Only one variable needed (optional):
+   
    ```
+   NEXT_PUBLIC_SERVER_URL=https://your-project.vercel.app
+   ```
+   
+   You can add this after deployment and redeploy.
 
-3. **Environment Variables on Vercel:**
-   - `PAYLOAD_SECRET` - Secure random string (32+ chars)
-   - `DATABASE_URI` - MongoDB Atlas connection string
-   - `NEXT_PUBLIC_SERVER_URL` - Your Vercel URL
+5. **Click Deploy** - That's it! ✅
 
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
+### Post-Deployment
 
-## 📊 Payload CMS Collections
-
-- **Users** - Admin authentication
-- **Pages** - Dynamic pages
-- **Blog Posts** - Article management
-- **Use Cases** - Product use cases
-- **Testimonials** - Customer reviews
-- **Pricing Plans** - Pricing tiers
-
-Access the admin panel at `/admin` after deployment.
+1. After deployment, copy your Vercel URL (e.g., `atomtalks-platform.vercel.app`)
+2. Add environment variable: `NEXT_PUBLIC_SERVER_URL=https://atomtalks-platform.vercel.app`
+3. Redeploy (optional - for metadata links)
 
 ## 🔧 Development
 
 ```bash
 npm run dev      # Start development server
 npm run build    # Build for production
-npm start        # Start production server
+npm start        # Start production server  
 npm run lint     # Run ESLint
 ```
 
@@ -188,30 +163,22 @@ npm run lint     # Run ESLint
 
 ### Update Content
 
-1. **Via Code:** Edit component files in `src/components/`
-2. **Via CMS:** Use Payload CMS admin at `/admin`
+Edit component files directly:
+- **Hero text:** `src/components/Hero1.tsx`
+- **Features:** `src/components/Features1.tsx`, `Features2.tsx`, `Features3.tsx`
+- **Pricing:** `src/components/Pricing1.tsx`
+- **FAQ:** `src/components/FAQ.tsx`
 
 ### Modify Styles
 
 - **Global styles:** `src/styles/globals.scss`
 - **Variables:** `src/styles/_variables.scss`
 - **Components:** `src/styles/components/`
+- **Animations:** `src/styles/animations.scss`
 
-### Add ReactBits Components
+### Add More ReactBits
 
-All ReactBits components are in `src/components/reactbits/`. To add more:
-
-1. Visit [reactbits.dev](https://reactbits.dev/)
-2. Copy component code (TypeScript + CSS variant)
-3. Add to `src/components/reactbits/`
-4. Import and use in your pages
-
-## 📖 Documentation
-
-- [Quick Start Guide](./QUICK_START.md)
-- [Migration Notes](./MIGRATION_NOTES.md)
-- [Deployment Guide](./DEPLOYMENT.md)
-- [Company Info](./COMPANY_INFO.md)
+Browse [reactbits.dev](https://reactbits.dev/) for more components. Copy the TypeScript + CSS variant into `src/components/reactbits/`.
 
 ## 🌟 Key Features
 
@@ -223,29 +190,34 @@ All ReactBits components are in `src/components/reactbits/`. To add more:
 - **Voice + Chat** - Dual-interface support
 - **Dual Persona** - Sales and support in one agent
 
-## 🤝 Contributing
+## 📊 Performance
 
-This is a proprietary project for AtomTalks. For questions or support, contact hello@atomtalks.com.
-
-## 📄 License
-
-Proprietary - All rights reserved AtomTalks © 2025
+- ✅ **100% Static** - No database calls
+- ✅ **Fast Load Times** - Optimized images and code splitting
+- ✅ **SEO Friendly** - Proper metadata and structure
+- ✅ **Mobile Responsive** - Works on all devices
+- ✅ **Accessibility** - WCAG compliant
 
 ## 🔗 Links
 
-- **Website:** http://localhost:3000 (local dev)
+- **Website:** https://atomtalks-platform.vercel.app (after deployment)
 - **GitHub:** https://github.com/PaulWallaceATL/atom-talks
 - **ReactBits:** https://reactbits.dev/
 
 ## 💻 Built With
 
 - [Next.js](https://nextjs.org/)
-- [Payload CMS](https://payloadcms.com/)
 - [ReactBits](https://reactbits.dev/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [Bootstrap](https://getbootstrap.com/)
-- [MongoDB](https://www.mongodb.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## 📄 License
+
+Proprietary - All rights reserved AtomTalks © 2025
 
 ---
 
 **Made with ❤️ by the AtomTalks team**
+
+**Questions?** Contact us at hello@atomtalks.com
