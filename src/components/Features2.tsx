@@ -58,7 +58,7 @@ export default function Features2({ dark = true, extraClassList = '' }: Features
                 
                 <ul className="list-unstyled d-flex flex-column gap-4">
                   <li className="d-flex gap-4">
-                    <div className={`icon-check w-6 h-6 bg-gradient-3 rounded-2 d-flex align-center justify-center flex-shrink-0 text-${dark ? 'primary-dark' : 'primary'}`}>
+                    <div className={`icon-check w-6 h-6 bg-gradient-3 rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 text-${dark ? 'primary-dark' : 'primary'}`}>
                       <CheckIcon />
                     </div>
                     <div>
@@ -72,7 +72,7 @@ export default function Features2({ dark = true, extraClassList = '' }: Features
                   </li>
                   
                   <li className="d-flex gap-4">
-                    <div className={`icon-check w-6 h-6 bg-gradient-3 rounded-2 d-flex align-center justify-center flex-shrink-0 text-${dark ? 'primary-dark' : 'primary'}`}>
+                    <div className={`icon-check w-6 h-6 bg-gradient-3 rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 text-${dark ? 'primary-dark' : 'primary'}`}>
                       <CheckIcon />
                     </div>
                     <div>
@@ -86,7 +86,7 @@ export default function Features2({ dark = true, extraClassList = '' }: Features
                   </li>
                   
                   <li className="d-flex gap-4">
-                    <div className={`icon-check w-6 h-6 bg-gradient-3 rounded-2 d-flex align-center justify-center flex-shrink-0 text-${dark ? 'primary-dark' : 'primary'}`}>
+                    <div className={`icon-check w-6 h-6 bg-gradient-3 rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 text-${dark ? 'primary-dark' : 'primary'}`}>
                       <CheckIcon />
                     </div>
                     <div>

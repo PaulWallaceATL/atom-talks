@@ -92,6 +92,8 @@ export default function Features1({ dark = true, extraClassList = '' }: Features
       <GridBackground />
       
       <div className="container position-relative" style={{ zIndex: 1 }}>
+        <div className="row">
+          <div className="col-12">
         <FadeInSection>
           <div className="text-center mb-16">
             <motion.div
@@ -115,6 +117,8 @@ export default function Features1({ dark = true, extraClassList = '' }: Features
             </p>
           </div>
         </FadeInSection>
+          </div>
+        </div>
 
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-6 g-xl-8">
           {features.map((feature, index) => (

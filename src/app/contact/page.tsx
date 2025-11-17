@@ -101,7 +101,7 @@ export default function ContactPage() {
           <MeshGradient />
           
           <div className="container position-relative" style={{ zIndex: 1 }}>
-            <div className="row justify-center">
+            <div className="row justify-content-center">
               <div className="col-lg-10">
                 
                 {/* Success Message */}

@@ -23,7 +23,7 @@ export default function Hero1({ dark = true, extraClassList = '' }: Hero1Props) 
       <FloatingElements />
       
       <div className="container position-relative" style={{ zIndex: 1 }}>
-        <div className="row justify-center">
+        <div className="row justify-content-center">
           <div className="col-lg-10 col-xl-9">
             <div className="text-center">
               <motion.div 

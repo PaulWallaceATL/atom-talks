@@ -46,12 +46,9 @@
 .z-50 { z-index: 50; }
 .z-100 { z-index: 100; }
 
-// Flexbox utilities
+// Flexbox utilities (only custom ones, Bootstrap already has most)
 .flex-shrink-0 { flex-shrink: 0; }
 .flex-grow-1 { flex-grow: 1; }
-.align-center { align-items: center; }
-.justify-center { justify-content: center; }
-.justify-between { justify-content: space-between; }
 
 // Layout utilities
 .h-full { height: 100%; }

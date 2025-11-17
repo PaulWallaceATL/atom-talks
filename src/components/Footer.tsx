@@ -92,7 +92,7 @@ export default function Footer({ dark = true, extraClassList = '' }: FooterProps
                       </motion.button>
                     </div>
                   </form>
-                  <ul className="list-unstyled d-flex flex-wrap align-center justify-center justify-md-start gap-3 social-list mb-0 mt-5">
+                  <ul className="list-unstyled d-flex flex-wrap align-items-center justify-content-center justify-content-md-start gap-3 social-list mb-0 mt-5">
                     <li>
                       <a href="#" aria-label="Github">
                         <svg

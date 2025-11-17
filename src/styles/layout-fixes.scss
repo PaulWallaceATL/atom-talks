@@ -78,14 +78,10 @@ section {
   max-width: 100vw;
 }
 
-// Fix row centering - critical fix
+// Fix row centering - critical fix  
 .row {
   margin-left: auto !important;
   margin-right: auto !important;
-  
-  &.justify-center {
-    justify-content: center !important;
-  }
 }
 
 // Ensure all column content is properly aligned

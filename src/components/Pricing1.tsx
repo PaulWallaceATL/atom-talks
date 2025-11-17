@@ -70,7 +70,7 @@ export default function Pricing1({ dark = true, extraClassList = '' }: Pricing1P
       
       <div className="container position-relative" style={{ zIndex: 1 }}>
         <FadeInSection>
-          <div className="row justify-center mb-16">
+          <div className="row justify-content-center mb-16">
             <div className="col-lg-10">
               <div className="text-center">
                 <motion.div

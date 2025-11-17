@@ -48,7 +48,7 @@ export default function FAQ({ dark = true, extraClassList = '' }: FAQProps) {
     <section className={`position-relative ${extraClassList}`}>
       <div className="container">
         <FadeInSection>
-          <div className="row justify-center mb-16">
+          <div className="row justify-content-center mb-16">
             <div className="col-lg-10">
               <div className="text-center">
                 <motion.div
@@ -75,7 +75,7 @@ export default function FAQ({ dark = true, extraClassList = '' }: FAQProps) {
           </div>
         </FadeInSection>
 
-        <div className="row justify-center">
+        <div className="row justify-content-center">
           <div className="col-lg-9">
             <div className="d-flex flex-column gap-4">
               {faqs.map((faq, index) => (
