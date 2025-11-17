@@ -89,12 +89,51 @@ export default function Navbar({ dark = true, extraClassList = '' }: NavbarProps
               border: 'none',
               padding: '0.5rem',
               background: 'transparent',
+              position: 'relative',
+              zIndex: 1001,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
-            <div className="navbar-toggler-icon">
-              <span></span>
-              <span></span>
-              <span></span>
+            <div className="navbar-toggler-icon" style={{ position: 'relative', width: '28px', height: '20px' }}>
+              <span style={{ 
+                position: 'absolute', 
+                display: 'block', 
+                width: '100%', 
+                height: '3px', 
+                background: '#facc15',
+                borderRadius: '3px',
+                top: '0',
+                left: '0',
+                transition: 'all 0.3s ease',
+                transform: isMobileMenuOpen ? 'rotate(45deg) translate(6px, 6px)' : 'none'
+              }}></span>
+              <span style={{ 
+                position: 'absolute', 
+                display: 'block', 
+                width: '100%', 
+                height: '3px', 
+                background: '#facc15',
+                borderRadius: '3px',
+                top: '50%',
+                left: '0',
+                transform: isMobileMenuOpen ? 'translateY(-50%) scaleX(0)' : 'translateY(-50%)',
+                transition: 'all 0.3s ease',
+                opacity: isMobileMenuOpen ? 0 : 1
+              }}></span>
+              <span style={{ 
+                position: 'absolute', 
+                display: 'block', 
+                width: '100%', 
+                height: '3px', 
+                background: '#facc15',
+                borderRadius: '3px',
+                bottom: '0',
+                left: '0',
+                transition: 'all 0.3s ease',
+                transform: isMobileMenuOpen ? 'rotate(-45deg) translate(6px, -6px)' : 'none'
+              }}></span>
             </div>
           </button>
 
