@@ -1,12 +1,18 @@
 // Layout fixes for Next.js version
 
-// Add padding to body to account for fixed navbar - THAT'S IT
+// Add padding to body to account for fixed navbar
 body {
   padding-top: 80px;
   
   @media (min-width: 992px) {
     padding-top: 90px;
   }
+}
+
+// FORCE container centering
+.container {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // Ensure navbar stays on top
